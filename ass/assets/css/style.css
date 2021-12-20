@@ -577,7 +577,7 @@ section {
   color: #6c757d;
   content: "/";
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .breadcrumbs .d-flex {
     display: block !important;
   }
