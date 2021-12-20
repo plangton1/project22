@@ -19,8 +19,8 @@ $query = sqlsrv_query($conn, $sql);
         <div class="row">
             <div class="col-lg-12">
             <div class="section-title">
-          <h2>เอกสารทั้งหมด</h2>
-          <h3>หน้าเอกสาร <span>ทั้งหมด</span></h3>
+          <h2 class="font-mirt">เอกสารทั้งหมด</h2>
+          <h3 class="font-mirt">หน้าเอกสารทั้งหมด</h3>
         </div>
             </div>
             <div class="tab-content font">

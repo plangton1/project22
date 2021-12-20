@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include('./include/css.php');?>
 <?php include('./include/head.php');?>
 <?php include('./connection/connection.php');?>
 <body>
@@ -10,11 +11,11 @@
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
         <img src="./img/logo-removebg-preview.png" alt="">
         <br>
-      <h1>ยินดีต้อนรับ เข้าสู่ <span>ระบบติดตามเอกสาร มาตรา 5</span></h1>
-      <h2>สถาบันวิจัยวิทยาศาสตร์และเทคโนโลยีแห่งประเทศไทย</h2>
-      <div class="d-flex">
-        <a href="https://www.tistr.or.th/main.php" class="btn-get-started scrollto">เข้าสู่เว็บหลัก</a>
-        <a href="https://www.youtube.com/watch?v=XmaGEtzVE2M" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>รับชม</span></a>
+      <p class="font-mirt fz-h">ยินดีต้อนรับเข้าสู่ ระบบติดตามเอกสารมาตรา 5</p>
+      <h2 class="font-mirt">สถาบันวิจัยวิทยาศาสตร์และเทคโนโลยีแห่งประเทศไทย (วว.)</h2>
+      <div class="d-flex font-mirt">
+        <a href="https://www.tistr.or.th/main.php" class="btn-get-started scrollto " style="text-decoration: none;">เข้าสู่เว็บหลัก</a>
+        <a href="https://www.youtube.com/watch?v=XmaGEtzVE2M" class="glightbox btn-watch-video" style="text-decoration: none;"><i class="bi bi-play-circle" ></i><span >รับชม</span></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -22,7 +23,7 @@
   <main id="main">
 
 <?php include('./include/menu.php');?>
-<section id="services" class="services">
+<section id="services " class="services font-mirt">
       <div class="container" data-aos="fade-up">
 <?php
     if (!isset($_GET['page']) && empty($_GET['page'])) {

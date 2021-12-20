@@ -25,7 +25,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">วาระจากที่ประชุม สมอ. </label>
                                                 <input type="text" name="standard_meet" class="form-control" value="<?php echo $result["standard_meet"] ?>">
@@ -38,7 +38,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2 f-red">
                                                 <label for="">เลขที่ มอก.*</label>
                                                 <input type="text" name="standard_number" class="form-control" required value="<?php echo $result["standard_number"] ?>">
@@ -51,7 +51,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">ชื่อมาตรฐาน</label>
                                                 <input type="text" name="standard_detail" class="form-control" value="<?php echo $result["standard_detail"] ?>">
@@ -69,7 +69,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">มาตรฐานบังคับ</label>
                                                 <input type="text" name="standard_mandatory" class="form-control" value="<?php echo $result["standard_mandatory"] ?>">
@@ -82,7 +82,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">หมายเลข tracking</label>
                                                 <input type="text" name="standard_tacking" class="form-control" value="<?php echo $result["standard_tacking"] ?>">
@@ -95,7 +95,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">หมายเหตุ</label>
                                                 <input type="text" name="standard_note" class="form-control" value="<?php echo $result["standard_note"] ?>">
@@ -108,7 +108,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">ไฟล์แนบ</label>
                                                 <input type="file" name="file" class="form-control" value="<?php echo $result["file"] ?>">
@@ -122,7 +122,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">สถานะ</label>
                                                 <select class="form-control" name="id_status" style="height: unset !important;">
@@ -143,7 +143,7 @@
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <div class="grid-3">
+                                        <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">วันที่แต่งตั้ง</label>
                                                 <input type="date" name="date" class="form-control">
@@ -161,7 +161,7 @@
                                 <div class="col-md-8">
                                     <div class="card mt-8">
                                         <div class="card-body">
-                                            <div class="grid-3">
+                                            <div class="">
                                                 <div class="form-group mb-2">
                                                     <label for="">กลุ่มผลิตภัณฑ์</label>
                                                     <a href="javascript:void(0)" class="add-more-form float-end btn btn-success">เพิ่ม</a>
@@ -212,7 +212,7 @@
                         <div class="col-md-8">
                             <div class="card mt-8">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">หน่วยงานที่สามารถทดสอบได้</label>
                                             <a href="javascript:void(0)" class="add-more-form2 float-end btn btn-success">เพิ่ม</a>
@@ -236,7 +236,7 @@
                                                         }
                                                     ?>
 
-                                                        <option value="<?php echo $result22['agency_22'];  ?>" <?php echo $c; ?>><?php echo $result22['agency_name']; ?></option>
+                                                        <option value="<?php echo $result22['agency_id'];  ?>" <?php echo $c; ?>><?php echo $result22['agency_name']; ?></option>
                                                     <?php } ?>
                                                 </select>
                                             <?php } ?>
@@ -260,7 +260,7 @@
                     <div class="col-md-8">
                         <div class="card mt-8">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <div class="form-group mb-2">
                                         <label for="">หน่วยงานที่ขอ</label>
                                         <a href="javascript:void(0)" class="add-more-form3 float-end btn btn-success">เพิ่ม</a>
@@ -306,7 +306,7 @@
                     <div class="col-md-8">
                         <div class="card mt-8">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <div class="form-group mb-2">
                                         <label for="">ประเภทผลิตภัณฑ์</label>
                                         <a href="javascript:void(0)" class="add-more-form4 float-end btn btn-success">เพิ่ม</a>

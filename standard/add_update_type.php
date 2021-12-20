@@ -29,7 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>แก้ไขข้อมูลประเภทผลิตภัณฑ์</h2>
+                    <h2 class="font-mirt">แก้ไขข้อมูลประเภทผลิตภัณฑ์</h2>
                 </div>
             </div>
 

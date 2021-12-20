@@ -1,7 +1,7 @@
 <footer id="footer">
 
 
-<div class="footer-top">
+<div class="footer-top font-mirt">
   <div class="container">
     <div class="row">
 

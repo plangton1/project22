@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>เพิ่มเอกสารยื่น มอก.</h2>
-                        <h3>เพิ่มเอกสารยื่น <span>มอก.</span></h3>
+                        <h2 class="font-mirt">เพิ่มเอกสารยื่น มอก.</h2>
+                        <h3 class="font-mirt">เพิ่มเอกสารยื่น มอก.</h3>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">วาระจากที่ประชุม สมอ. </label>
                                             <input type="text" name="standard_meet" class="form-control">
@@ -42,7 +42,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2 f-red">
                                             <label for="">เลขที่ มอก.*</label>
                                             <input type="text" name="standard_number" class="form-control" required>
@@ -55,7 +55,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">ชื่อมาตรฐาน</label>
                                             <input type="text" name="standard_detail" class="form-control">
@@ -68,7 +68,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <div class="form-group mb-2">
                                                 <label for="">มาตรฐานบังคับ</label>
@@ -84,7 +84,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">หมายเลข tracking</label>
                                             <input type="text" name="standard_tacking" class="form-control">
@@ -97,7 +97,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">หมายเหตุ</label>
                                             <input type="text" name="standard_note" class="form-control">
@@ -110,7 +110,7 @@
                         <div class="col-md-4">
                             <div class="card mt-4">
                                 <div class="card-body">
-                                    <div class="grid-3">
+                                    <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">ไฟล์แนบ</label>
                                             <input type="file" name="file" class="form-control">
@@ -127,10 +127,10 @@
                     <div class="col-md-8">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="grid-3">
-                                    <a href="javascript:void(0)" onclick="add_element('main','sub_main');" class=" float-end btn btn-success">เพิ่ม</a>
-                                    <div class="main-form mt-3 " id="main">
-                                        <div class="row" id="sub_main">
+                                <div class="">
+                                <a href="javascript:void(0)" onclick="add_element('main4','sub_main4');" class=" float-end btn btn-success">เพิ่ม</a>
+                                    <div class="main-form1 mt-3 " id="main4">
+                                        <div class="row" id="sub_main4">
                                             <div class="col-md-4">
                                                 <div class="form-group mb-2">
                                                     <label for="">กลุ่มผลิตภัณฑ์</label>
@@ -165,7 +165,7 @@
                     <div class="col-md-8">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <a href="javascript:void(0)" onclick="add_element('main1','sub_main1');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main1">
                                         <div class="row" id="sub_main1">
@@ -200,7 +200,7 @@
                     <div class="col-md-8">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <a href="javascript:void(0)" onclick="add_element('main2','sub_main2');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3" id="main2">
                                         <div class="row" id="sub_main2">
@@ -233,7 +233,7 @@
                     <div class="col-md-8">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <a href="javascript:void(0)" onclick="add_element('main3','sub_main3');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3 border-bottom" id="main3">
                                         <div class="row" id="sub_main3">
@@ -267,7 +267,7 @@
                     <center>
                         <!--  -->
                         <button type="submit" class="btn btn-primary mt-3">
-                            <h2>บันทึกข้อมูล</h2>
+                            <h5 class="font-mirt">บันทึกข้อมูล</h5>
                         </button>
                     </center>
                 </form>

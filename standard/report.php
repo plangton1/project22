@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>รายงาน</h2>
-                    <h3>เลือกรายงาน <span>ที่ต้องการ</span></h3>
+                    <h2 class="font-mirt">รายงาน</h2>
+                    <h3 class="font-mirt">เลือกรายงานที่ต้องการ</h3>
                 </div>
             </div>
 
@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <div class="card mt-4">
                         <div class="card-body">
-                            <div class="grid-3">
+                            <div class="">
                                 <div class="pd-t">
                                     <label> เลือกรูปแบบรายงานอัตโนมัติ </label>
 
@@ -41,12 +41,12 @@
                     <div class="col-md-12">
                         <div class="card mt-4">
                             <div class="card-body">
-                                <div class="grid-3">
+                                <div class="">
                                     <label> เลือกรูปแบบรายงานแบบกำหนดเอง</label>
                                     <br>
                                     <input type="checkbox" id="vehicle1" name="vehicle1" value=""><label for="vehicle1"> มาตรฐานเลขที่ *</label>
                                     <br>
-                                    <input type="checkbox" id="vehicle2" name="vehicle2" value=""> <label for="vehicle2">ประเภทผลิตภัณฑ์ *</label>
+                                    <input type="checkbox" id="vehicle2" name="vehicle2" value=""><label for="vehicle2">ประเภทผลิตภัณฑ์ *</label>
                                     <br>
                                     <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label for="vehicle3">กลุ่มผลิตภัณฑ์</label>
                                     <br>

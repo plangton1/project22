@@ -12,7 +12,7 @@ $query = sqlsrv_query($conn, $sql);
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>กลุ่มผลิตภัณฑ์</h2>
+                    <h2 class="font-mirt">กลุ่มผลิตภัณฑ์</h2>
                 </div>
             </div>
 

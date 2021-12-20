@@ -25,13 +25,13 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>เพิ่มข้อมูลหน่วยงานที่ทดสอบได้</h2>
+                    <h2 class="font-mirt">เพิ่มข้อมูลหน่วยงานที่ทดสอบได้</h2>
                 </div>
             </div>
 
         <div class="container card-regis font">
             <form method="post" action="">
-                <h3 class="font">เพิ่มข้อมูลหน่วยงานที่ทดสอบได้</h3>
+                
                 <hr>
                 <br>
                 <div class="">
