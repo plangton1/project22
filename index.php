@@ -13,8 +13,8 @@
       <h1>ยินดีต้อนรับ เข้าสู่ <span>ระบบติดตามเอกสาร มาตรา 5</span></h1>
       <h2>สถาบันวิจัยวิทยาศาสตร์และเทคโนโลยีแห่งประเทศไทย</h2>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <a href="https://www.tistr.or.th/main.php" class="btn-get-started scrollto">เข้าสู่เว็บหลัก</a>
+        <a href="https://www.youtube.com/watch?v=XmaGEtzVE2M" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>รับชม</span></a>
       </div>
     </div>
   </section><!-- End Hero -->
