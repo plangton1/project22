@@ -7,13 +7,14 @@ $sql = "SELECT * FROM group_tb ";
 $query = sqlsrv_query($conn, $sql);
 ?>
 <form method="post" action="">
-<section class="upcoming-meetings" id="meetings">
+<section  class="about section-bg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading">
-                    <h2 class="font-mirt">กลุ่มผลิตภัณฑ์</h2>
-                </div>
+        <div class="col-lg-12">
+            <div class="section-title">
+          <h2 class="font-mirt">เพิ่มข้อมูลพื้นฐาน</h2>
+          <h3 class="font-mirt">เพิ่มกลุ่มผลิตภัณฑ์</h3>
+        </div>
             </div>
 
         <div class="container  tab-content font">

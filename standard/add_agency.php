@@ -10,10 +10,11 @@ $query = sqlsrv_query($conn, $sql);
 <section class="upcoming-meetings" id="meetings">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading">
-                    <h2 class="font-mirt">ข้อมูลหน่วยงานที่ทดสอบ</h2>
-                </div>
+        <div class="col-lg-12">
+            <div class="section-title">
+          <h2 class="font-mirt">เพิ่มข้อมูลพื้นฐาน</h2>
+          <h3 class="font-mirt">หน่วยงานที่ทดสอบ</h3>
+        </div>
             </div>
 
         <div class="container  tab-content font">

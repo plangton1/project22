@@ -6,21 +6,31 @@ $query = sqlsrv_query($conn, $sql);
 $result = sqlsrv_fetch_array($query);
     }
     if (isset($_POST) && !empty($_POST)) {
+echo '<pre>';
+ print_r($_POST);
+ echo '</pre>';
+ //exit();
+
         $standard_number = $_POST['standard_number'];
         $standard_meet = $_POST['standard_meet'];
         $standard_detail = $_POST['standard_detail'];
         $standard_mandatory = $_POST['standard_mandatory'];
         $standard_tacking = $_POST['standard_tacking'];
         $standard_note = $_POST['standard_note'];
+        $standard_status = $_POST['standard_status'];
+        $standard_day = $_POST['standard_day'];
+
         $sql = "UPDATE main_std 
-        SET standard_number= ? ,
-            standard_meet = ? , 
-            standard_detail = ? ,
-            standard_mandatory = ? ,
-            standard_tacking = ? 
-         WHERE standard_idtb = ? ";
-        $params = array($standard_number,$standard_meet,$standard_detail,$standard_mandatory,$standard_tacking,$standard_idtb);
-        if (sqlsrv_query($conn, $sql, $params)) {
+        SET standard_number= '$standard_number' ,
+            standard_meet = '$standard_meet' , 
+            standard_detail = '$standard_detail' ,
+            standard_mandatory = '$standard_mandatory' ,
+            standard_tacking = '$standard_tacking' ,
+            standard_status ='$standard_status' ,
+            standard_day = '$standard_day'
+         WHERE standard_idtb = '$standard_idtb' ";
+        //$params = array($standard_number,$standard_meet,$standard_detail,$standard_mandatory,$standard_tacking,$standard_idtb);
+        if (sqlsrv_query($conn, $sql)) {
             $alert = '<script type="text/javascript">';
             $alert .= 'alert("แก้ไขสถานะสำเร็จ !!");';
             $alert .= 'window.location.href = "?page=status";';
@@ -32,5 +42,4 @@ $result = sqlsrv_fetch_array($query);
         }
         sqlsrv_close($conn);
     }
-
 ?>

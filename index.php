@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include('./include/css.php');?>
+<?php include('standard/date.php');?>
 <?php include('./include/head.php');?>
 <?php include('./connection/connection.php');?>
 <body>
@@ -33,6 +34,12 @@
     } elseif (isset($_GET['page']) && $_GET['page'] == 'status') {
         if (isset($_GET['function']) && $_GET['function'] == 'update') {
             include('standard/status_edit.php');
+        }if (isset($_GET['function']) && $_GET['function'] == 'detail') {
+            include('standard/status_detail.php');
+        }if (isset($_GET['function']) && $_GET['function'] == 'delete') {
+                include('standard/status_delete.php');
+        }if (isset($_GET['function']) && $_GET['function'] == 'reportprint') {
+                include('standard/reportprint.php');
         } else {
             include('standard/status.php');
         }

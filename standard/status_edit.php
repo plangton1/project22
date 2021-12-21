@@ -22,6 +22,42 @@
                 <div class="container">
                     <form action="" method="POST">
                         <div class="row">
+                        <div class="col-md-6">
+                                <div class="card mt-4 ">
+                                    <div class="card-body bg-primary text-white">
+                                        <div class="">
+                                            <div class="form-group mb-2">
+                                                <label for="">สถานะ</label>
+                                                <select class="form-control" name="standard_status" style="height: unset !important;">
+                                                    <option selected >กรุณาเลือกสถานะ</option>
+                                                    <?php
+                                                    $sqll = "SELECT * FROM select_status";
+                                                    $queryy = sqlsrv_query($conn, $sqll);
+                                                    while ($result2 = sqlsrv_fetch_array($queryy, SQLSRV_FETCH_ASSOC)) { ?>
+                                                        <option value="<?php echo $result2['id_statuss'];  ?>"><?php echo $result2['statuss_name'];  ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="card mt-4">
+                                    <div class="card-body bg-success text-white">
+                                        <div class="">
+                                            <div class="form-group mb-2">
+                                                <label for="">วันที่แต่งตั้ง</label>
+                                                <input type="date" name="date" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="col-md-4">
                                 <div class="card mt-4">
                                     <div class="card-body">
@@ -118,40 +154,7 @@
                                 </div>
                             </div>
 
-
-                            <div class="col-md-4">
-                                <div class="card mt-4">
-                                    <div class="card-body">
-                                        <div class="">
-                                            <div class="form-group mb-2">
-                                                <label for="">สถานะ</label>
-                                                <select class="form-control" name="id_status" style="height: unset !important;">
-                                                    <option selected disabled>กรุณาเลือกสถานะ</option>
-                                                    <?php
-                                                    $sqll = "SELECT * FROM select_status";
-                                                    $queryy = sqlsrv_query($conn, $sqll);
-                                                    while ($result2 = sqlsrv_fetch_array($queryy, SQLSRV_FETCH_ASSOC)) { ?>
-                                                        <option value="<?php echo $result2['id_statuss'];  ?>"><?php echo $result2['statuss_name'];  ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card mt-4">
-                                    <div class="card-body">
-                                        <div class="">
-                                            <div class="form-group mb-2">
-                                                <label for="">วันที่แต่งตั้ง</label>
-                                                <input type="date" name="date" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
 
 

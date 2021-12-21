@@ -2,6 +2,9 @@
 require '../connection/connection.php';
 
 $mode = $_REQUEST["mode"];
+// echo '<pre>';
+// print_r($_REQUEST);
+// exit();
 
 if ($mode == "insert_data") {
     $standard_meet = $_REQUEST["standard_meet"];
@@ -139,31 +142,22 @@ if ($mode == "insert_data") {
 
         $sql4 = "INSERT INTO dimension_department ( department_id , standard_idtb  ) 
       VALUES ('$departmentid', '$standard_idtb')";
-
         $stmt4 = sqlsrv_query($conn, $sql4);
-        }
-
-        // if ($stmt4 == false) {
-        //     die(print_r(sqlsrv_errors()));
-        // } else {
-        //     echo "บันทึกข้อมูลสำเร็จ4";
-        // }
-
-
-        //echo "<br>";
+        
     }
-    // if (sqlsrv_query($conn, $sql4)) {
-    //     $alert = '<script type="text/javascript">';
-    //     $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
-    //     $alert .= 'window.location.href = "?page=status";';
-    //     $alert .= '</script>';
-    //     echo $alert;
-    //     exit();;
-    // } else {
-    //     echo "Error: " . $sql0 . "<br>" . sqlsrv_errors($conn);
-    // }
-    // sqlsrv_close($conn);
-    echo "ok save" ;
 
-    //echo "<script>location.href='index.php?PG=1';</script>";
+
+    }
+    if (sqlsrv_query($conn, $sql4)) {
+        $alert = '<script type="text/javascript">';
+        $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
+        $alert .= 'window.location.href = "../index.php?page=status";';
+        $alert .= '</script>';
+        echo $alert;
+        exit();;
+    } else {
+        echo "Error: " . $sql0 . "<br>" . sqlsrv_errors($conn);
+    }
+    sqlsrv_close($conn);
+
 }

@@ -22,7 +22,7 @@
             </div>
 
             <div class="container">
-                <form action="standard/insert_sql2.php" method="POST">
+                <form action="standard/insert_sql2.php" method="POST" enctype="multiple/form-data">
                     <input type="hidden" name="mode" value="insert_data">
                     <div class="row">
                         <div class="col-md-4">
@@ -31,7 +31,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">วาระจากที่ประชุม สมอ. </label>
-                                            <input type="text" name="standard_meet" class="form-control">
+                                            <input type="text" name="standard_meet" class="form-control" required >
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">ชื่อมาตรฐาน</label>
-                                            <input type="text" name="standard_detail" class="form-control">
+                                            <input type="text" name="standard_detail" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                         <div class="form-group mb-2">
                                             <div class="form-group mb-2">
                                                 <label for="">มาตรฐานบังคับ</label>
-                                                <input type="text" name="standard_mandatory" class="form-control">
+                                                <input type="text" name="standard_mandatory" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">หมายเลข tracking</label>
-                                            <input type="text" name="standard_tacking" class="form-control">
+                                            <input type="text" name="standard_tacking" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">หมายเหตุ</label>
-                                            <input type="text" name="standard_note" class="form-control">
+                                            <input type="text" name="standard_note" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">ไฟล์แนบ</label>
-                                            <input type="file" name="file" class="form-control">
+                                            <input type="file" name="file" class="form-control" name="" required>
                                         </div>
                                     </div>
                                 </div>
@@ -128,12 +128,12 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
+                                <label for="">กลุ่มผลิตภัณฑ์</label>
                                 <a href="javascript:void(0)" onclick="add_element('main4','sub_main4');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main4">
                                         <div class="row" id="sub_main4">
-                                            <div class="col-md-4">
+                                            <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                    <label for="">กลุ่มผลิตภัณฑ์</label>
 
                                                     <select class="form-control" name="group_id[]" id="group_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกกลุ่มผลิตภัณฑ์</option>
@@ -143,9 +143,8 @@
                                                         while ($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) { ?>
                                                             <option value="<?php echo $result['group_id'];  ?>"><?php echo $result['group_name'];  ?></option>
                                                         <?php } ?>
-                                                    </select>
-                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
-
+                                                        </select>
+                                                        <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -166,12 +165,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
+                                <label for="">หน่วยงานที่สามารถทดสอบได้</label>
                                     <a href="javascript:void(0)" onclick="add_element('main1','sub_main1');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main1">
                                         <div class="row" id="sub_main1">
-                                            <div class="col-md-4">
+                                            <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                    <label for="">หน่วยงานที่สามารถทดสอบได้</label>
+                                            
                                                     <select class="form-control" name="agency_id[]" id="agency_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่สามารถทดสอบได้</option>
                                                         <?php
@@ -201,12 +201,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
+                                <label for="">ประเภทผลิตภัณฑ์</label>
                                     <a href="javascript:void(0)" onclick="add_element('main2','sub_main2');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3" id="main2">
                                         <div class="row" id="sub_main2">
-                                            <div class="col-md-4">
+                                            <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                    <label for="">ประเภทผลิตภัณฑ์</label>
+                                                   
                                                     <select class="form-control" name="type_id[]" id="type_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกประเภทผลิตภัณฑ์</option>
                                                         <?php
@@ -234,12 +235,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
+                                <label for="">หน่วยงานที่ขอ</label>
                                     <a href="javascript:void(0)" onclick="add_element('main3','sub_main3');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3 border-bottom" id="main3">
                                         <div class="row" id="sub_main3">
-                                            <div class="col-md-4">
+                                            <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                    <label for="">หน่วยงานที่ขอ</label>
+                                                 
                                                     <select class="form-control" name="department_id[]" id="department_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่ขอ</option>
                                                         <?php

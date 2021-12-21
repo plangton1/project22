@@ -22,6 +22,11 @@
   <link href="./ass/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="./ass/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="./ass/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
   <link href="./ass/assets/css/style.css" rel="stylesheet">
@@ -32,4 +37,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <!-- table -->
+  <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
