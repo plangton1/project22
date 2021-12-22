@@ -1,6 +1,5 @@
 <?php
 $page = (isset($_GET['page'])) ? $_GET['page'] : '';
-
 if (isset($_POST) && !empty($_POST)) {
     $standard_idtb = $_POST['standard_idtb'];
     $standard_number = $_POST['standard_number'];
@@ -76,7 +75,7 @@ $query2 = sqlsrv_query($conn , $sql2);
                                                 <a href="?page=<?= $_GET['page'] ?>&function=reportprint&standard_idtb=<?= $data['standard_idtb'] ?>" onclick="return confirm('คุณต้องการพิมพ์เอกสารนี้ : <?= $data['standard_number'] ?> หรือไม่ ??')" class="btn btn-sm btn-info">พิมพ์รายงาน</a>
                                                 <a href="?page=<?= $_GET['page'] ?>&function=delete&standard_idtb=<?= $data['standard_idtb'] ?>" onclick="return confirm('คุณต้องการลบเอกสารนี้ : <?= $data['standard_number'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบเอกสาร</a>
 
-                                                <!-- <a href="?page=<?= $_GET['page'] ?>&function=submitstatus&standard_idtb=<?= $data['standard_idtb'] ?>" class="btn btn-sm btn-primary">สถานะ</a> -->
+                                                
                                                 </h5>
                                             </div>
                                         </td>

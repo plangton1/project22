@@ -28,7 +28,7 @@
       <div class="container" data-aos="fade-up">
 <?php
     if (!isset($_GET['page']) && empty($_GET['page'])) {
-        include('standard/status.php');
+        include('dashboard/index.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'insert2') {
         include('standard/insert2.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'status') {

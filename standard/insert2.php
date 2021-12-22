@@ -10,7 +10,7 @@
 
 <body>
 
-    <section  class="about section-bg">
+    <section class="about section-bg">
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-12">
@@ -31,7 +31,7 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">วาระจากที่ประชุม สมอ. </label>
-                                            <input type="text" name="standard_meet" class="form-control" required >
+                                            <input type="text" name="standard_meet" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +113,24 @@
                                     <div class="">
                                         <div class="form-group mb-2">
                                             <label for="">ไฟล์แนบ</label>
+                                            <a href="javascript:void(0)" onclick="add_element('main5','sub_main5');" class=" float-end btn btn-success">เพิ่ม</a>
+                                            <div class="main-form1 mt-3 " id="main5">
                                             <input type="file" name="file" class="form-control" name="" required>
+                                                <div style="display: none;">
+                                                    <div class="row" id="sub_main5">
+
+                                                        <div class="form-group mb-2 input-group">
+
+                                                            <input type="file" name="file" class="form-control" name="" required>
+
+                                                            <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger ">ลบ</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -128,8 +145,8 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
-                                <label for="">กลุ่มผลิตภัณฑ์</label>
-                                <a href="javascript:void(0)" onclick="add_element('main4','sub_main4');" class=" float-end btn btn-success">เพิ่ม</a>
+                                    <label for="">กลุ่มผลิตภัณฑ์</label>
+                                    <a href="javascript:void(0)" onclick="add_element('main4','sub_main4');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main4">
                                         <div class="row" id="sub_main4">
                                             <div class="col-md-8">
@@ -143,8 +160,8 @@
                                                         while ($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) { ?>
                                                             <option value="<?php echo $result['group_id'];  ?>"><?php echo $result['group_name'];  ?></option>
                                                         <?php } ?>
-                                                        </select>
-                                                        <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
+                                                    </select>
+                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -165,13 +182,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
-                                <label for="">หน่วยงานที่สามารถทดสอบได้</label>
+                                    <label for="">หน่วยงานที่สามารถทดสอบได้</label>
                                     <a href="javascript:void(0)" onclick="add_element('main1','sub_main1');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main1">
                                         <div class="row" id="sub_main1">
                                             <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                            
+
                                                     <select class="form-control" name="agency_id[]" id="agency_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่สามารถทดสอบได้</option>
                                                         <?php
@@ -201,13 +218,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
-                                <label for="">ประเภทผลิตภัณฑ์</label>
+                                    <label for="">ประเภทผลิตภัณฑ์</label>
                                     <a href="javascript:void(0)" onclick="add_element('main2','sub_main2');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3" id="main2">
                                         <div class="row" id="sub_main2">
                                             <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                   
+
                                                     <select class="form-control" name="type_id[]" id="type_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกประเภทผลิตภัณฑ์</option>
                                                         <?php
@@ -235,13 +252,13 @@
                         <div class="card mt-4">
                             <div class="card-body">
                                 <div class="">
-                                <label for="">หน่วยงานที่ขอ</label>
+                                    <label for="">หน่วยงานที่ขอ</label>
                                     <a href="javascript:void(0)" onclick="add_element('main3','sub_main3');" class="float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form2 mt-3 border-bottom" id="main3">
                                         <div class="row" id="sub_main3">
                                             <div class="col-md-8">
                                                 <div class="form-group mb-2">
-                                                 
+
                                                     <select class="form-control" name="department_id[]" id="department_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่ขอ</option>
                                                         <?php
