@@ -14,7 +14,10 @@
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-12">
+                <a  class="btn btn-sm " style="background-color:#FFD700;"
+                            onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
                     <div class="section-title">
+                        
                         <h2 class="font-mirt">เพิ่มเอกสารยื่น มอก.</h2>
                         <h3 class="font-mirt">เพิ่มเอกสารยื่น มอก.</h3>
                     </div>
@@ -118,11 +121,8 @@
                                             <input type="file" name="file" class="form-control" name="" required>
                                                 <div style="display: none;">
                                                     <div class="row" id="sub_main5">
-
                                                         <div class="form-group mb-2 input-group">
-
                                                             <input type="file" name="file" class="form-control" name="" required>
-
                                                             <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger ">ลบ</button>
 
                                                         </div>
@@ -149,8 +149,9 @@
                                     <a href="javascript:void(0)" onclick="add_element('main4','sub_main4');" class=" float-end btn btn-success">เพิ่ม</a>
                                     <div class="main-form1 mt-3 " id="main4">
                                         <div class="row" id="sub_main4">
+                                            
                                             <div class="col-md-8">
-                                                <div class="form-group mb-2">
+                                            <div class="form-group mb-2 input-group">
 
                                                     <select class="form-control" name="group_id[]" id="group_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกกลุ่มผลิตภัณฑ์</option>
@@ -161,7 +162,7 @@
                                                             <option value="<?php echo $result['group_id'];  ?>"><?php echo $result['group_name'];  ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
+                                                    <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger ">ลบ</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -187,7 +188,7 @@
                                     <div class="main-form1 mt-3 " id="main1">
                                         <div class="row" id="sub_main1">
                                             <div class="col-md-8">
-                                                <div class="form-group mb-2">
+                                            <div class="form-group mb-2 input-group">
 
                                                     <select class="form-control" name="agency_id[]" id="agency_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่สามารถทดสอบได้</option>
@@ -198,7 +199,7 @@
                                                             <option value="<?php echo $result['agency_id'];  ?>"><?php echo $result['agency_name'];  ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
+                                                    <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
                                                 </div>
                                             </div>
 
@@ -223,7 +224,7 @@
                                     <div class="main-form2 mt-3" id="main2">
                                         <div class="row" id="sub_main2">
                                             <div class="col-md-8">
-                                                <div class="form-group mb-2">
+                                            <div class="form-group mb-2 input-group">
 
                                                     <select class="form-control" name="type_id[]" id="type_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกประเภทผลิตภัณฑ์</option>
@@ -234,7 +235,7 @@
                                                             <option value="<?php echo $result['type_id'];  ?>"><?php echo $result['type_name'];  ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
+                                                    <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
                                                 </div>
 
                                             </div>
@@ -257,7 +258,7 @@
                                     <div class="main-form2 mt-3 border-bottom" id="main3">
                                         <div class="row" id="sub_main3">
                                             <div class="col-md-8">
-                                                <div class="form-group mb-2">
+                                            <div class="form-group mb-2 input-group">
 
                                                     <select class="form-control" name="department_id[]" id="department_id" style="height: unset !important;">
                                                         <option selected disabled>กรุณาเลือกหน่วยงานที่ขอ</option>
@@ -268,7 +269,7 @@
                                                             <option value="<?php echo $result['department_id'];  ?>"><?php echo $result['department_name'];  ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                    <button type="button" onclick="$(this).parent().parent().parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
+                                                    <button type="button" onclick="$(this).parent().remove();" class="remove-btn btn btn-danger mt-2">ลบ</button>
                                                 </div>
 
                                             </div>

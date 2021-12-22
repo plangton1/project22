@@ -9,7 +9,7 @@
 		return "$strDay $strMonthThai $strYear";
 	}
 ?>
-<?php
+<?php	
 	function DateThai1($date_end)
 	{
 		$strYear = date("Y",strtotime($date_end))+543;
@@ -20,3 +20,5 @@
 		return "$strDay $strMonthThai $strYear";
 	}
 ?>
+<!--  เรียกใช้  picker_date.js สำหรับสร้างตัวเลือก ปฎิทิน -->
+<script src="https://รับเขียนโปรแกรม.net/picker_date/picker_date.js"></script>

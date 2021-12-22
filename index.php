@@ -23,7 +23,6 @@
 
   <main id="main">
 
-<?php include('./include/menu.php');?>
 <section id="services " class="services font-mirt">
       <div class="container" data-aos="fade-up">
 <?php
@@ -31,18 +30,24 @@
         include('dashboard/index.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'insert2') {
         include('standard/insert2.php');
-    } elseif (isset($_GET['page']) && $_GET['page'] == 'status') {
+    // } elseif (isset($_GET['page']) && $_GET['page'] == 'update') {
+    //     include('standard/status_edit.php');
+    } elseif (isset($_GET['page']) && $_GET['page'] == 'detail') {
         if (isset($_GET['function']) && $_GET['function'] == 'update') {
             include('standard/status_edit.php');
-        }if (isset($_GET['function']) && $_GET['function'] == 'detail') {
-            include('standard/status_detail.php');
-        }if (isset($_GET['function']) && $_GET['function'] == 'delete') {
-                include('standard/status_delete.php');
-        }if (isset($_GET['function']) && $_GET['function'] == 'reportprint') {
-                include('standard/reportprint.php');
         } else {
-            include('standard/status.php');
+        include('standard/status_detail.php');
         }
+    } elseif (isset($_GET['page']) && $_GET['page'] == 'status') {
+        // if (isset($_GET['function']) && $_GET['function'] == 'detail') {
+        //     include('standard/status_detail.php');
+        // } else {
+            include('standard/status.php');
+        // }
+    // } elseif (isset($_GET['page']) && $_GET['page'] == 'update') {
+    //     include('standard/status_edit.php');
+    } elseif (isset($_GET['page']) && $_GET['page'] == 'delete') {
+        include('standard/status_delete.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'report') {
         include('standard/report.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'statusedit') {

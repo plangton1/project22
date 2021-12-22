@@ -6,10 +6,6 @@ $query = sqlsrv_query($conn, $sql);
 $result = sqlsrv_fetch_array($query);
     }
     if (isset($_POST) && !empty($_POST)) {
-echo '<pre>';
- print_r($_POST);
- echo '</pre>';
- //exit();
 
         $standard_number = $_POST['standard_number'];
         $standard_meet = $_POST['standard_meet'];

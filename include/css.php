@@ -22,5 +22,9 @@
   row-gap: 5px;
   
   }
+  .mg-r{
+    margin-right:20px;
+
+  }
 
   </style>
