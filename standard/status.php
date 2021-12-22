@@ -19,10 +19,7 @@ $query = sqlsrv_query($conn, $sql);
 $sql2 = "SELECT * FROM select_status";
 $query2 = sqlsrv_query($conn , $sql2);
 ?>
-<section  class="about section-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+        <section>
             <div class="section-title">
           <h2 class="font-mirt">เอกสารทั้งหมด</h2>
           <h3 class="font-mirt">หน้าเอกสารทั้งหมด</h3>
