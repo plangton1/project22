@@ -17,7 +17,9 @@ if ($mode == "insert_data") {
     $group_id = $_REQUEST["group_id"];
     $agency_id = $_REQUEST["agency_id"];
     $type_id = $_REQUEST["type_id"];
+    $file_id = $_REQUEST["file_id"];
     $department_id = $_REQUEST["department_id"];
+    $standard_status = "4";
     if (!empty($standard_number)) {
         $sql_check = "SELECT * FROM main_std WHERE standard_number = '$standard_number'";
         $query_check = sqlsrv_query($conn, $sql_check);
@@ -30,10 +32,10 @@ if ($mode == "insert_data") {
             echo $alert;
             exit();
         }
-    $sql = "INSERT INTO main_std ( standard_mandatory , standard_meet , standard_tacking , standard_number , standard_detail , standard_note  ) 
-      VALUES ('$standard_mandatory','$standard_meet','$standard_tacking','$standard_number','$standard_detail','$standard_note')";
+    $sql = "INSERT INTO main_std ( standard_mandatory , standard_meet , standard_tacking , standard_number , standard_detail , standard_note , standard_status  ) 
+      VALUES ('$standard_mandatory','$standard_meet','$standard_tacking','$standard_number','$standard_detail','$standard_note' , '$standard_status')";
 
-
+ 
 
     //$conn->query($sql);
     //sqlsrv_close($conn);
@@ -159,17 +161,33 @@ if ($mode == "insert_data") {
 
 
     }
-    if (sqlsrv_query($conn, $sql4)) {
-        $alert = '<script type="text/javascript">';
-        $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
-        $alert .= 'window.location.href = "../index.php?page=status";';
-        $alert .= '</script>';
-        echo $alert;
-        exit();;
-    } else {
-        echo "Error: " . $sql0 . "<br>" . sqlsrv_errors($conn);
-    }
-    sqlsrv_close($conn);
 
+    $countboxfile = count($file_id);
+    for ($i = 0; $i < $countboxfile; $i++) {
+       $fileid =  $file_id[$i];
+       $filename = $_FILES["filUpload"]["name"];
+        if (trim($fileid) <> "") {
+if(move_uploaded_file($filename,"file/upload/".$filename))
+	{
+		$sql5 = "INSERT INTO dimension_file (fileid) VALUES ('".$filename."')";
+		$stmt5 = sqlsrv_query($conn, $sql5);		
+	}
 }
 }
+    }
+}
+
+//     if (sqlsrv_query($conn, $sql5)) {
+//         $alert = '<script type="text/javascript">';
+//         $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
+//         $alert .= 'window.location.href = "../index.php?page=status";';
+//         $alert .= '</script>';
+//         echo $alert;
+//         exit();;
+//     } else {
+//         echo "Error: " . $sql5 . "<br>" . sqlsrv_errors($conn);
+//     }
+//     sqlsrv_close($conn);
+
+// }
+//     }

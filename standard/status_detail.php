@@ -1,22 +1,17 @@
 <?php
 $page = (isset($_GET['page'])) ? $_GET['page'] : '';
+
 if (isset($_GET['standard_idtb']) && !empty($_GET['standard_idtb'])) {
     $standard_idtb = $_GET['standard_idtb'];
     $sql = "SELECT * , a.standard_idtb,a.standard_status,b.statuss_name AS name_status 
-     FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss WHERE standard_idtb = ? ";
-    $params = array("$standard_idtb");
-    $query = sqlsrv_query($conn, $sql, $params);
+     FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss WHERE standard_idtb = '$standard_idtb' ";
+    $query = sqlsrv_query($conn, $sql);
     $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
 }
 
-$sql222 = ("SELECT * , a.standard_idtb,a.standard_status,b.statuss_name AS name_status 
-FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss");
-$query222 = sqlsrv_query($conn, $sql222);
-// $resulttt = sqlsrv_fetch_array($query222 , SQLSRV_FETCH_ASSOC);
 
 $sql2 = "SELECT * FROM select_status";
 $query2 = sqlsrv_query($conn , $sql2);
-
 $sql3 = "SELECT * FROM type_tb";
 $query3 = sqlsrv_query($conn , $sql3);
 
@@ -25,8 +20,9 @@ $query3 = sqlsrv_query($conn , $sql3);
     <form action="" method="post" enctype=multipart/form-data>
         <div class="container">
             <div class="col-lg-12">
-            <h5 align="left" class="text-success">สถานะของเอกสารปัจจุบัน : <?php echo $result['name_status'] ; ?></h5>  
-            <div class="section-title">
+                <h5 align="left" class="text-success">สถานะของเอกสารปัจจุบัน : <?php echo $result['name_status'] ; ?>
+                </h5>
+                <div class="section-title">
                     <div align="right">
                         <a href="?page=<?= $_GET['page'] ?>&function=update&standard_idtb=<?= $result['standard_idtb'] ?>"
                             class="btn btn-sm btn-warning ">แก้ไขข้อมูลสถานะ</a>

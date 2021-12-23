@@ -83,13 +83,24 @@
         } else {
             include('standard/add_agency.php');
         }
+    } elseif (isset($_GET['page']) && $_GET['page'] == 'add_department') {
+        if (isset($_GET['function']) && $_GET['function'] == 'update') {
+            include('standard/add_update_department.php');
+        }
+        if (isset($_GET['function']) && $_GET['function'] == 'delete') {
+            include('standard/add_delete_department.php');
+        } else {
+            include('standard/add_department.php');
+        }
     } elseif (isset($_GET['page']) && $_GET['page'] == 'add_insert_type') {
         include('standard/add_insert_type.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'add_insert_group') {
         include('standard/add_insert_group.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'add_insert_agency') {
         include('standard/add_insert_agency.php');
-    }
+    } elseif (isset($_GET['page']) && $_GET['page'] == 'add_insert_department') {
+    include('standard/add_insert_department.php');
+}
     ?>
 
   </main><!-- End #main -->

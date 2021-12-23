@@ -15,7 +15,8 @@
               <li><a href="?page=add_type">เพิ่มประเภทข้อมูล</a></li>
               </li>
               <li><a href="?page=add_group">เพิ่มกลุ่มผลิตภัณฑ์</a></li>
-              <li><a href="?page=add_agency">เพิ่มหน่วยงาน</a></li>
+              <li><a href="?page=add_agency">เพิ่มหน่วยงานที่ทดสอบได้</a></li>
+              <li><a href="?page=add_department">เพิ่มหน่วยงานที่ขอ</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="?page=contact">ติดต่อเรา</a></li>
