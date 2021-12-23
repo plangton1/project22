@@ -12,10 +12,14 @@ $date_today = (date('d/m/Y H:i:s'));
     <title></title>
 </head>
 <body>
+<h5 align="left" class="text-success">สถานะของเอกสารปัจจุบัน : <?php echo $result['name_status']; ?>
     <section class="about section-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                <div align="left">
+                        <a class="btn btn-sm " style="background-color:#FFD700;" onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
+                    </div>
                     <div class="section-title">
                         <h2>แก้ไขเอกสาร</h2>
                         <h3>แก้ไขเอกสาร <span>มอก.</span></h3>
@@ -30,7 +34,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                         <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">สถานะ</label>
-                                                <select class="form-control" name="standard_status"
+                                                <select class="form-control" name="standard_status" value="<?php echo $result['standard_status']?>"
                                                     style="height: unset !important;">
                                                     <option selected>กรุณาเลือกสถานะ</option>
                                                     <?php
@@ -54,7 +58,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                         <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">วันที่แต่งตั้ง</label>
-                                                <input  id="mydate" name="standard_day" class=" form-control">
+                                                <input  id="date" name="standard_day" class=" form-control" value="<?php echo $result['standard_day'] ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +389,6 @@ $date_today = (date('d/m/Y H:i:s'));
         </div>
         </div>
     </section>
-    <?php include('insert_2_script.php'); ?>
 
 </body>
 

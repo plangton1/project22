@@ -1,7 +1,8 @@
 <?php
 if (isset($_GET['standard_idtb']) && !empty($_GET['standard_idtb'])) {
     $standard_idtb = $_GET['standard_idtb'];
-$sql = "SELECT * FROM  main_std WHERE standard_idtb = " . $_REQUEST["standard_idtb"];
+$sql = "SELECT *  , a.standard_idtb,a.standard_status,b.statuss_name AS name_status 
+ FROM  main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss WHERE standard_idtb = " . $_REQUEST["standard_idtb"];
 $query = sqlsrv_query($conn, $sql);
 $result = sqlsrv_fetch_array($query);
     }
@@ -25,7 +26,6 @@ $result = sqlsrv_fetch_array($query);
             standard_status ='$standard_status' ,
             standard_day = '$standard_day'
          WHERE standard_idtb = '$standard_idtb' ";
-        //$params = array($standard_number,$standard_meet,$standard_detail,$standard_mandatory,$standard_tacking,$standard_idtb);
         if (sqlsrv_query($conn, $sql)) {
             $alert = '<script type="text/javascript">';
             $alert .= 'alert("แก้ไขสถานะสำเร็จ !!");';

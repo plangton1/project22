@@ -125,8 +125,8 @@
                                                 <div class="col-md-8">
                                                     <div class="form-group mb-2 input-group">
 
-                                                        <input type="file" class="form-control" name="file_id[]"
-                                                            id="file_id" style="height: unset !important;">
+                                                        <input type="file" class="form-control" name="fileupload[]"
+                                                            id="fileupload" style="height: unset !important;">
                                                         <button type="button" onclick="$(this).parent().remove();"
                                                             class="remove-btn btn btn-danger ">ลบ</button>
                                                     </div>
@@ -318,7 +318,6 @@
         </div>
         </div>
     </section>
-    <?php include('insert_2_script.php'); ?>
 
 </body>
 

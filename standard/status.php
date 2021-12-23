@@ -16,7 +16,7 @@ if (isset($_POST) && !empty($_POST)) {
     $standard_day = $_POST['standard_day'];
 
 }
-$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a LEFT JOIN select_status b ON a.standard_status = b.id_statuss ");
+$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss ");
 $query = sqlsrv_query($conn, $sql);
 
 $sql2 = "SELECT * FROM select_status";
@@ -37,7 +37,7 @@ $query2 = sqlsrv_query($conn , $sql2);
                 </a>
             </div>
             <hr>
-            <form method="post">
+            <form method="post" action="">
                 <table class="table table-hover table-responsive-xl table-striped text-center pt-5"
                     style="background-color: white;" id="tableall">
                     <thead>
@@ -60,7 +60,7 @@ $query2 = sqlsrv_query($conn , $sql2);
                             <td class="align-middle"><?= $data['standard_meet'] ?></td>
                             <td class="align-middle"><?= $data['standard_number'] ?></td>
                             <td class="align-middle"><?= $data['standard_detail'] ?></td>
-                            <td class="align-middle"><?php echo dateThai($data['standard_day']) ; ?></td>
+                            <td class="align-middle"><?php echo date($data['standard_day']) ; ?></td>
                             <?php if($data['id_statuss'] == 1 ) : ?>
                             <td class="align-middle " style="background-color: #daf7a6"><?= $data['name_status'] ?></td>
                             <?php endif ; ?>
