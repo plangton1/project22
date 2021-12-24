@@ -164,7 +164,7 @@ if ($mode == "insert_data") {
         $date = date("Y-m-d H:i:s");
         //เพิ่มไฟล์
         $upload = $_FILES['fileupload'];
-        print_r($upload);
+        // print_r($upload);
         $count_upload = count($upload['name']);
 
         for ($i = 0; $i < $count_upload; $i++) {
@@ -174,7 +174,7 @@ if ($mode == "insert_data") {
             $file_error = $upload['error'][$i];
             $file_size = $upload['size'][$i];
 
-            echo "<br> $i . $file_name ";
+            // echo "<br> $i . $file_name ";
 
             if ($file_name != "") {   //not select file
                 //โฟลเดอร์ที่จะ upload file เข้าไป 
@@ -204,17 +204,17 @@ if ($mode == "insert_data") {
 
 
 
-        // if (sqlsrv_query($conn, $sql4)) {
-        //     $alert = '<script type="text/javascript">';
-        //     $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
-        //     $alert .= 'window.location.href = "../index.php?page=status";';
-        //     $alert .= '</script>';
-        //     echo $alert;
-        //     exit();;
-        // } else {
-        //     echo "Error: " . $sql4 . "<br>" . sqlsrv_errors($conn);
-        // }
-        // sqlsrv_close($conn);
+        if (sqlsrv_query($conn, $sql5)) {
+            $alert = '<script type="text/javascript">';
+            $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
+            $alert .= 'window.location.href = "../index.php?page=status";';
+            $alert .= '</script>';
+            echo $alert;
+            exit();;
+        } else {
+            echo "Error: " . $sql4 . "<br>" . sqlsrv_errors($conn);
+        }
+        sqlsrv_close($conn);
 
     }
 }

@@ -13,7 +13,7 @@ if (isset($_POST) && !empty($_POST)) {
     $standard_tacking = $_POST['standard_tacking'];
     $standard_note = $_POST['standard_note'];
     $standard_status = $_POST['standard_status'];
-    $standard_day = $_POST['standard_day'];
+    $standard_day = $_POST['standard_day'] ;
 
 }
 $sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss ");
@@ -22,7 +22,6 @@ $query = sqlsrv_query($conn, $sql);
 $sql2 = "SELECT * FROM select_status";
 $query2 = sqlsrv_query($conn , $sql2);
 ?>
-<?php echo dateThai($date_today) ; ?>
 <section>
     <div class="section-title">
         <h2 class="font-mirt">เอกสารทั้งหมด</h2>
@@ -59,8 +58,13 @@ $query2 = sqlsrv_query($conn , $sql2);
                             <td class="align-middle"><?= $i++ ?></td>
                             <td class="align-middle"><?= $data['standard_meet'] ?></td>
                             <td class="align-middle"><?= $data['standard_number'] ?></td>
-                            <td class="align-middle"><?= $data['standard_detail'] ?></td>
-                            <td class="align-middle"><?php echo date($data['standard_day']) ; ?></td>
+                            <td class="align-middle"><?= $data['standard_mandatory'] ?></td>
+                            <?php if($data['standard_day'] == '') : ?>
+                            <td class="align-middle" >ยังไม่ได้ระบุสถานะ</td>
+                            <?php endif ; ?>
+                            <?php if($data['standard_day']) : ?>
+                            <td class="align-middle" ><?= $data['standard_day'] ?></td>
+                            <?php endif ; ?>
                             <?php if($data['id_statuss'] == 1 ) : ?>
                             <td class="align-middle " style="background-color: #daf7a6"><?= $data['name_status'] ?></td>
                             <?php endif ; ?>
@@ -102,35 +106,9 @@ $query2 = sqlsrv_query($conn , $sql2);
 
         </div>
     </div>
-</section>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#tableall').DataTable({
-        language: {
 
-            "decimal": "",
-            "emptyTable": "ไม่พบข้อมูล",
-            "info": "แสดง _START_ to _END_ of _TOTAL_ รายการ",
-            "infoEmpty": "แสดง 0 ถึง 0 จากทั้งหมด 0 รายการ",
-            "infoFiltered": "(filtered from _MAX_ total entries)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "แสดง _MENU_ รายการ",
-            "loadingRecords": "Loading...",
-            "processing": "Processing...",
-            "search": "ค้นหา:",
-            "zeroRecords": "No matching records found",
-            "paginate": {
-                "first": "First",
-                "last": "Last",
-                "next": "Next",
-                "previous": "Previous"
-            },
-            "aria": {
-                "sortAscending": ": activate to sort column ascending",
-                "sortDescending": ": activate to sort column descending"
-            }
-        }
-    });
-});
-</script>
+
+
+</section>
+
+  

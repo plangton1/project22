@@ -20,7 +20,7 @@ $query = sqlsrv_query($conn, $sql);
         <form method="post" action="">
             <div class="container  tab-content font">
                 <div id="home" class="container-fluid tab-pane active m-2">
-                    <table id="tableall" class="table table-bordered table-responsive-xl  pt-5" style="background-color: white;" >
+                    <table  class="table table-bordered table-responsive-xl  pt-5" id="tableall" style="background-color: white;" >
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">หมายเลขประเภท</th>

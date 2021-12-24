@@ -24,9 +24,13 @@ $query3 = sqlsrv_query($conn, $sql3);
                 </h5>
                 <div class="section-title">
                     <div align="right">
-                        <a href="?page=<?= $_GET['page'] ?>&function=update&standard_idtb=<?= $result['standard_idtb'] ?>" class="btn btn-sm btn-warning ">แก้ไขข้อมูลสถานะ</a>
-                        <a href="?page=delete&standard_idtb=<?= $result['standard_idtb'] ?>" onclick="return confirm('คุณต้องการลบเอกสารนี้ : <?= $result['standard_number'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบเอกสาร</a>
-                        <a class="btn btn-sm " style="background-color:#FFD700;" onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
+                        <a href="?page=<?= $_GET['page'] ?>&function=update&standard_idtb=<?= $result['standard_idtb'] ?>"
+                            class="btn btn-sm btn-warning ">แก้ไขข้อมูลสถานะ</a>
+                        <a href="?page=delete&standard_idtb=<?= $result['standard_idtb'] ?>"
+                            onclick="return confirm('คุณต้องการลบเอกสารนี้ : <?= $result['standard_number'] ?> หรือไม่ ??')"
+                            class="btn btn-sm btn-danger">ลบเอกสาร</a>
+                        <a class="btn btn-sm " style="background-color:#FFD700;"
+                            onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
                     </div>
                     <h2 class="font-mirt">เอกสารทั้งหมด</h2>
                     <h4 class="font-mirt">หมายเลขเอกสาร : <?php echo $result['standard_idtb'] ?></h4>
@@ -91,10 +95,11 @@ $query3 = sqlsrv_query($conn, $sql3);
                         $sql = "SELECT * FROM dimension_group WHERE standard_idtb  = '$standarsidtb' ";
                         $query1 = sqlsrv_query($conn, $sql);
                         while ($result = sqlsrv_fetch_array($query1, SQLSRV_FETCH_ASSOC)) { ?>
-                            <?php $group =  $result['group_id']; ?>
-                            <select class="form-control" name="group_id[]" id="group_id" style="height: unset !important;" disabled>
-                                <option value="">กรุณาเลือกกลุ่มผลิตภัณฑ์</option>
-                                <?php
+                        <?php $group =  $result['group_id']; ?>
+                        <select class="form-control" name="group_id[]" id="group_id" style="height: unset !important;"
+                            disabled>
+                            <option value="">กรุณาเลือกกลุ่มผลิตภัณฑ์</option>
+                            <?php
                                 $sql2 = "SELECT * FROM group_tb";
                                 $query2 = sqlsrv_query($conn, $sql2);
                                 while ($result2 = sqlsrv_fetch_array($query2, SQLSRV_FETCH_ASSOC)) {
@@ -106,10 +111,10 @@ $query3 = sqlsrv_query($conn, $sql3);
                                     }
                                 ?>
 
-                                    <option value="<?php echo $result2['group_id'];  ?>" <?php echo $c; ?>>
-                                        <?php echo $result2['group_name']; ?></option>
-                                <?php } ?>
-                            </select>
+                            <option value="<?php echo $result2['group_id'];  ?>" <?php echo $c; ?>>
+                                <?php echo $result2['group_name']; ?></option>
+                            <?php } ?>
+                        </select>
                         <?php } ?>
 
                     </div>
@@ -124,10 +129,11 @@ $query3 = sqlsrv_query($conn, $sql3);
                         $sql2 = "SELECT * FROM dimension_agency WHERE standard_idtb  = '$standarsidtb' ";
                         $query2 = sqlsrv_query($conn, $sql2);
                         while ($result2 = sqlsrv_fetch_array($query2, SQLSRV_FETCH_ASSOC)) { ?>
-                            <?php $agency =  $result2['agency_id']; ?>
-                            <select class="form-control" name="agency_id[]" id="agency_id" style="height: unset !important;" disabled>
-                                <option value="">กรุณาเลือกหน่วยงานที่ทดสอบ</option>
-                                <?php
+                        <?php $agency =  $result2['agency_id']; ?>
+                        <select class="form-control" name="agency_id[]" id="agency_id" style="height: unset !important;"
+                            disabled>
+                            <option value="">กรุณาเลือกหน่วยงานที่ทดสอบ</option>
+                            <?php
                                 $sql22 = "SELECT * FROM agency_tb";
                                 $query22 = sqlsrv_query($conn, $sql22);
                                 while ($result22 = sqlsrv_fetch_array($query22, SQLSRV_FETCH_ASSOC)) {
@@ -139,10 +145,10 @@ $query3 = sqlsrv_query($conn, $sql3);
                                     }
                                 ?>
 
-                                    <option value="<?php echo $result22['agency_id'];  ?>" <?php echo $c; ?>>
-                                        <?php echo $result22['agency_name']; ?></option>
-                                <?php } ?>
-                            </select>
+                            <option value="<?php echo $result22['agency_id'];  ?>" <?php echo $c; ?>>
+                                <?php echo $result22['agency_name']; ?></option>
+                            <?php } ?>
+                        </select>
                         <?php } ?>
                     </div>
                 </div>
@@ -157,10 +163,11 @@ $query3 = sqlsrv_query($conn, $sql3);
                         $sql3 = "SELECT * FROM dimension_department WHERE standard_idtb  = '$standarsidtb' ";
                         $query3 = sqlsrv_query($conn, $sql3);
                         while ($result3 = sqlsrv_fetch_array($query3, SQLSRV_FETCH_ASSOC)) { ?>
-                            <?php $department =  $result3['department_id']; ?>
-                            <select class="form-control" name="department_id[]" id="department_id" style="height: unset !important;" disabled>
-                                <option value="">กรุณาเลือกหน่วยงานที่ขอ</option>
-                                <?php
+                        <?php $department =  $result3['department_id']; ?>
+                        <select class="form-control" name="department_id[]" id="department_id"
+                            style="height: unset !important;" disabled>
+                            <option value="">กรุณาเลือกหน่วยงานที่ขอ</option>
+                            <?php
                                 $sql33 = "SELECT * FROM department_tb";
                                 $query33 = sqlsrv_query($conn, $sql33);
                                 while ($result33 = sqlsrv_fetch_array($query33, SQLSRV_FETCH_ASSOC)) {
@@ -172,10 +179,10 @@ $query3 = sqlsrv_query($conn, $sql3);
                                     }
                                 ?>
 
-                                    <option value="<?php echo $result33['department_id'];  ?>" <?php echo $c; ?>>
-                                        <?php echo $result33['department_name']; ?></option>
-                                <?php } ?>
-                            </select>
+                            <option value="<?php echo $result33['department_id'];  ?>" <?php echo $c; ?>>
+                                <?php echo $result33['department_name']; ?></option>
+                            <?php } ?>
+                        </select>
                         <?php } ?>
                     </div>
                 </div>
@@ -189,10 +196,11 @@ $query3 = sqlsrv_query($conn, $sql3);
                         $sql4 = "SELECT * FROM dimension_type WHERE standard_idtb  = '$standarsidtb' ";
                         $query4 = sqlsrv_query($conn, $sql4);
                         while ($result4 = sqlsrv_fetch_array($query4, SQLSRV_FETCH_ASSOC)) { ?>
-                            <?php $type =  $result4['type_id']; ?>
-                            <select class="form-control" name="type_id[]" id="type_id" style="height: unset !important;" disabled>
-                                <option value="">กรุณาเลือกประเภทผลิตภัณฑ์</option>
-                                <?php
+                        <?php $type =  $result4['type_id']; ?>
+                        <select class="form-control" name="type_id[]" id="type_id" style="height: unset !important;"
+                            disabled>
+                            <option value="">กรุณาเลือกประเภทผลิตภัณฑ์</option>
+                            <?php
                                 $sql44 = "SELECT * FROM type_tb";
                                 $query44 = sqlsrv_query($conn, $sql44);
                                 while ($result44 = sqlsrv_fetch_array($query44, SQLSRV_FETCH_ASSOC)) {
@@ -204,13 +212,44 @@ $query3 = sqlsrv_query($conn, $sql3);
                                     }
                                 ?>
 
-                                    <option value="<?php echo $result44['type_id'];  ?>" <?php echo $c; ?>>
-                                        <?php echo $result44['type_name']; ?></option>
-                                <?php } ?>
-                            </select>
+                            <option value="<?php echo $result44['type_id'];  ?>" <?php echo $c; ?>>
+                                <?php echo $result44['type_name']; ?></option>
+                            <?php } ?>
+                        </select>
                         <?php } ?>
                     </div>
                 </div>
+
+
+                <!-- หลายฟอร์ม -->
+
+                <div class="col-sm-3">
+                    <div class="card   mb-3" style="max-width: 18rem;">
+                        <div class="card-header text-white bg-primary">ไฟล์แนบ</div>
+                        <div class="main-form1 mt-3 " id="main5">
+                            <div class="row" id="sub_main5">
+
+                                <div class="col-md-8">
+                                    <div class="form-group mb-2 input-group">
+                                        <?php 
+                                                        $standarsidtb = $_REQUEST['standard_idtb'];
+                                                        $sql5 = "SELECT * FROM dimension_file WHERE standard_idtb  = '$standarsidtb' ";
+                                                        $query5 = sqlsrv_query($conn,$sql5);
+                                                        while ($result5 = sqlsrv_fetch_array($query5, SQLSRV_FETCH_ASSOC)) { ?>
+                                        <a href='./fileupload/<?=$result5['fileupload'] ;?>'><?php echo $result5['fileupload'] ; ?>
+                                        </a>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         </div>
