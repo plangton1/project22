@@ -155,41 +155,66 @@ if ($mode == "insert_data") {
             }
         }
 
-        
-	    // $file_id = $_REQUEST["file_id"];
-        // $date = date("d-m-Y"); //กำหนดวันที่และเวลา
-        // //เพิ่มไฟล์
-        // $upload = $_FILES['fileupload'];
-        // if ($upload <> '') {   //not select file
-        //     //โฟลเดอร์ที่จะ upload file เข้าไป 
-        //     $path = "./fileupload/";
-            
 
-        //     //เอาชื่อไฟล์ที่มีอักขระแปลกๆออก
-        //     $remove_these = array(' ', '`', '"', '\'', '\\', '/', '_');
-        //     $newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
 
-        //     //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
-        //     $newname = time() . '-' . $newname;
-        //     $path_copy = $path . $newname;
-        //     $path_link = "./fileupload/" . $newname;
 
-        //     //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
-        //     copy($_FILES['fileupload']['tmp_name'], $path_copy);
+        //$file_id = $_FILES["fileupload"];
+
+        date_default_timezone_set("Asia/Bangkok");
+        $date = date("Y-m-d H:i:s");
+        //เพิ่มไฟล์
+        $upload = $_FILES['fileupload'];
+        print_r($upload);
+        $count_upload = count($upload['name']);
+
+        for ($i = 0; $i < $count_upload; $i++) {
+            $file_name = $upload['name'][$i];
+            $file_type = $upload['type'][$i];
+            $file_tmp_name = $upload['tmp_name'][$i];
+            $file_error = $upload['error'][$i];
+            $file_size = $upload['size'][$i];
+
+            echo "<br> $i . $file_name ";
+
+            if ($file_name != "") {   //not select file
+                //โฟลเดอร์ที่จะ upload file เข้าไป 
+                $path = "../fileupload/";
+
+
+                //เอาชื่อไฟล์ที่มีอักขระแปลกๆออก
+                $remove_these = array(' ', '`', '"', '\'', '\\', '/', '_');
+                $newname = str_replace($remove_these, '', $file_name);
+
+                //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
+                $newname = time() . '-' . $newname;
+                $path_copy = $path . $newname;
+                $path_link = "../fileupload/" . $newname;
+
+                //echo $newname;
+
+                //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
+
+                move_uploaded_file($file_tmp_name, $path_copy);
+
+                $sql5 = "INSERT INTO dimension_file (fileupload , standard_idtb , upload_date) 
+            VALUES ( '$newname' , '$standard_idtb' , '$date')";
+                $stmt5 = sqlsrv_query($conn, $sql5);
+            }
+        }
+
+
+
+        // if (sqlsrv_query($conn, $sql4)) {
+        //     $alert = '<script type="text/javascript">';
+        //     $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
+        //     $alert .= 'window.location.href = "../index.php?page=status";';
+        //     $alert .= '</script>';
+        //     echo $alert;
+        //     exit();;
+        // } else {
+        //     echo "Error: " . $sql4 . "<br>" . sqlsrv_errors($conn);
         // }
-        // $sql5 = "INSERT INTO dimension_file (file_upload , standard_idtb) VALUES ('" . $newname . "' , '".$standard_idtb."')";
+        // sqlsrv_close($conn);
 
-    if (sqlsrv_query($conn, $sql5)) {
-        $alert = '<script type="text/javascript">';
-        $alert .= 'alert("เพิ่มข้อมูลสถานะสำเร็จ !!");';
-        $alert .= 'window.location.href = "../index.php?page=status";';
-        $alert .= '</script>';
-        echo $alert;
-        exit();;
-    } else {
-        echo "Error: " . $sql5 . "<br>" . sqlsrv_errors($conn);
     }
-    sqlsrv_close($conn);
-
 }
-    }

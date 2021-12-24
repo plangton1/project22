@@ -25,7 +25,7 @@
             </div>
 
             <div class="container">
-                <form action="standard/insert_sql2.php" method="POST" enctype="multiple/form-data">
+                <form action="standard/insert_sql2.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="mode" value="insert_data">
                     <div class="row">
                         <div class="col-md-4">

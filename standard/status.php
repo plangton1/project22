@@ -33,7 +33,7 @@ $query2 = sqlsrv_query($conn , $sql2);
         <div id="home" class="container-fluid tab-pane active m-2">
             <div align="right">
                 <a href="?page=insert2" class="btn bt mg-t-bt b-add text-white mg-r" style="background:#4CAF50;">
-                    <h5>เพิ่มเอกสาร</h5>
+                    <h5 class="font-mirt">เพิ่มเอกสาร</h5>
                 </a>
             </div>
             <hr>
@@ -85,7 +85,7 @@ $query2 = sqlsrv_query($conn , $sql2);
                                         <!--กดรายงานสถานะแล้วไปหน้าไหนต่อ แล้วในหน้านั้นเป็นประมาณไหน จะได้สร้างถูก -->
                                         <!-- <a href="?page=<?= $_GET['page'] ?>&function=update&standard_idtb=<?= $data['standard_idtb'] ?>" class="btn btn-sm btn-warning">แก้ไขข้อมูลสถานะ</a> -->
                                         <a href="?page=detail&standard_idtb=<?= $data['standard_idtb'] ?>"
-                                            class="btn btn-sm" style="background-color:#31f9cb;">ดูรายละเอียด</a>
+                                            class="btn btn-sm font-mirt" style="background-color:#31f9cb;">ดูรายละเอียด</a>
                                         <!-- <a href="?page=<?= $_GET['page'] ?>&function=reportprint&standard_idtb=<?= $data['standard_idtb'] ?>" onclick="return confirm('คุณต้องการพิมพ์เอกสารนี้ : <?= $data['standard_number'] ?> หรือไม่ ??')" class="btn btn-sm btn-info">พิมพ์รายงาน</a> -->
                                         <!-- <a href="?page=<?= $_GET['page'] ?>&function=delete&standard_idtb=<?= $data['standard_idtb'] ?>" onclick="return confirm('คุณต้องการลบเอกสารนี้ : <?= $data['standard_number'] ?> หรือไม่ ??')" class="btn btn-sm btn-danger">ลบเอกสาร</a> -->
 
