@@ -1,6 +1,6 @@
 <?php 
 date_default_timezone_set("Asia/Bangkok");
-$standard_create = (date('d/m/Y H:i:s'));
+$standard_create = (date('m/d/Y H:i:s'));
 ?>
 <?php
 $page = (isset($_GET['page'])) ? $_GET['page'] : '';
@@ -20,7 +20,7 @@ if (isset($_POST) && !empty($_POST)) {
     //  print_r ($_POST);
     // echo '</pre>';
 }
-$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a 
+$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a
 INNER JOIN select_status b ON a.standard_status = b.id_statuss
 WHERE standard_detail  LIKE '%$strKeyword%' OR standard_status LIKE '%$strKeyword%'
 OR standard_idtb  LIKE '%$strKeyword%'  OR standard_number  LIKE '%$strKeyword%' 
@@ -68,7 +68,7 @@ $query2 = sqlsrv_query($conn , $sql2);
                         <?php while ($data = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) : ?>
                         <tr class="text-center">
                             <td class="align-middle"><?= $i++ ?></td>
-                            <td class="align-middle"><?= date($data['standard_create'])  ?></td>
+                            <td class="align-middle"><?= dateThai($data['standard_create'])  ?></td>
                              <td class="align-middle"><?= $data['standard_meet'] ?></td>
                             <td class="align-middle"><?= $data['standard_number'] ?></td>
                             <td class="align-middle"><?= $data['standard_mandatory'] ?></td>

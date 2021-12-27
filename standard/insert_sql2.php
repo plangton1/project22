@@ -13,7 +13,7 @@ if ($mode == "insert_data") {
     $standard_mandatory = $_REQUEST["standard_mandatory"];
     $standard_tacking = $_REQUEST["standard_tacking"];
     $standard_note = $_REQUEST["standard_note"];
-    $date = date('d/m/Y H:i:s');
+    $date = date('m/d/Y H:i:s');
     //$file = $_REQUEST["file"];
     $group_id = $_REQUEST["group_id"];
     $agency_id = $_REQUEST["agency_id"];

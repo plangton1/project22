@@ -1,4 +1,5 @@
 <?php
+require('../connection/connection.php');
 if(count($_POST['query']) > 0)
 {
  $search_text = implode(",",$_POST['query']);

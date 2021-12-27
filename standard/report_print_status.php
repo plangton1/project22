@@ -1,21 +1,12 @@
 <?php
-//index.php
-// $query = "SELECT DISTINCT  standard_status ,  a.standard_idtb,b.id_statuss,b.statuss_name AS name_status FROM main_std a 
-// INNER JOIN select_status b ON a.standard_status = b.id_statuss ORDER BY name_status ASC";
 $query = "SELECT DISTINCT  standard_status  FROM main_std ORDER BY standard_status ASC";
 $statement = sqlsrv_query($conn,$query);
-echo '<pre>';
-print_r($query);
-echo '</pre>';
 ?>
 <script
-			  src="https://code.jquery.com/jquery-3.6.0.min.js"
-			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-			  crossorigin="anonymous"></script>
-<body>
+src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
     <div class="container">
-        <form action="fetch.php" method="post">
-        <select name="search_status" id="search_status" multiple class="form-control ">
+        <form action="" method="post">
+        <select name="search_status" id="search_status" multiple class="form-control selectpicker">
             <?php while ($row = sqlsrv_fetch_array($statement, SQLSRV_FETCH_ASSOC)) : ?>
             <option value="<?php echo $row["standard_status"] ; ?>"><?php  echo $row["standard_status"] ; ?></option>
             <?php endwhile ; ?>
@@ -41,17 +32,12 @@ echo '</pre>';
         <br />
             </form>
     </div>
-</body>
-
-</html>
-
-
 <script type="text/javascript">
 $(document).ready(function() {
     load_data();
     function load_data(query = '') {
         $.ajax({
-            url: "fetch.php",
+            url: "./standard/fetch.php",
             method: "POST",
             data: {
                 query: query
