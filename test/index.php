@@ -66,7 +66,7 @@ $(document).ready(function() {
         //$('#status').val($('#search_status').val());
         var query = $('#search_status').val();
         load_data(query);
-        //console.log(query);
+        // console.log(query);
     });
 });
 </script>

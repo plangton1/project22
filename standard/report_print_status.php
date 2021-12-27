@@ -1,62 +1,71 @@
 <?php
-$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a 
-INNER JOIN select_status b ON a.standard_status = b.id_statuss ORDER BY standard_number ASC ");
-$result = sqlsrv_query($conn, $sql);
-
-$sql2 = "SELECT * FROM select_status";
-$query2 = sqlsrv_query($conn , $sql2);
+//index.php
+// $query = "SELECT DISTINCT  standard_status ,  a.standard_idtb,b.id_statuss,b.statuss_name AS name_status FROM main_std a 
+// INNER JOIN select_status b ON a.standard_status = b.id_statuss ORDER BY name_status ASC";
+$query = "SELECT DISTINCT  standard_status  FROM main_std ORDER BY standard_status ASC";
+$statement = sqlsrv_query($conn,$query);
+echo '<pre>';
+print_r($query);
+echo '</pre>';
 ?>
-
-<select name="select_status" id="select_status" multiple class="form-control selectpicker"   style="height: unset !important;">
-        <option selected disabled>กรุณาเลือกสถานะ</option>
-        <?php
-        while ($result = sqlsrv_fetch_array($query2, SQLSRV_FETCH_ASSOC)) { ?>
-        <option value="<?php echo $result['id_statuss'];  ?>">
-            <?php echo $result['statuss_name'];  ?></option>
-        <?php } ?>
-    </select>
-    <div style="clear:both"></div>
-    <br />
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>ลำดับ</th>
-                    <th>สถานะของเอกสาร</th>
-                    <th>วันที่เพิ่มสถานะ</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+<body>
+    <div class="container">
+        <form action="fetch.php" method="post">
+        <select name="search_status" id="search_status" multiple class="form-control ">
+            <?php while ($row = sqlsrv_fetch_array($statement, SQLSRV_FETCH_ASSOC)) : ?>
+            <option value="<?php echo $row["standard_status"] ; ?>"><?php  echo $row["standard_status"] ; ?></option>
+            <?php endwhile ; ?>
+        </select>
+        <input type="hidden" name="status" id="status" />
+        <div style="clear:both"></div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ลำดับ</th>
+                        <th>สถานะ</th>
+                        <th>ชื่อ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+            </form>
     </div>
-    <br />
-    <br />
-    <br />
-    </div>
-    <script>
-$(document).ready(function(){
+</body>
 
- load_data();
- 
- function load_data(query='')
- {
-  $.ajax({
-   url:"fetch.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('tbody').html(data);
-   }
-  })
- }
+</html>
 
- $('#select_status').change(function(){
-  $('#status').val($('#select_status').val());
-  var query = $('#status').val();
-  load_data(query);
- });
- 
+
+<script type="text/javascript">
+$(document).ready(function() {
+    load_data();
+    function load_data(query = '') {
+        $.ajax({
+            url: "fetch.php",
+            method: "POST",
+            data: {
+                query: query
+            },
+            success: function(data) {
+                $('tbody').html(data);
+            }
+        })
+    }
+    $('#search_status').change(function() {
+        //$('#status').val($('#search_status').val());
+        var query = $('#search_status').val();
+        load_data(query);
+        // console.log(query);
+    });
 });
 </script>
