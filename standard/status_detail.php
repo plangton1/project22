@@ -17,7 +17,7 @@ $query3 = sqlsrv_query($conn, $sql3);
 
 ?>
 <section class="about section-bg">
-    <form action="" method="post" enctype=multipart/form-data>
+    <form action="" method="post" enctype=multipart/form-data style="font-size:18px;" >
         <div class="container">
             <div class="col-lg-12">
                 <h5 align="left" class="text-success">สถานะของเอกสารปัจจุบัน : <?php echo $result['name_status']; ?>
@@ -25,11 +25,14 @@ $query3 = sqlsrv_query($conn, $sql3);
                 <div class="section-title">
                     <div align="right">
                         <a href="?page=<?= $_GET['page'] ?>&function=update&standard_idtb=<?= $result['standard_idtb'] ?>"
-                            class="btn btn-sm btn-warning ">แก้ไขข้อมูลสถานะ</a>
+                            class="btn btn-sm btn-warning text-white" style="font-size:20px;">แก้ไขข้อมูลสถานะ</a>
+                            <a href="?page=<?= $_GET['page'] ?>&function=print&standard_idtb=<?= $result['standard_idtb'] ?>"
+                            onclick="return confirm('คุณต้องการพิมพ์เอกสารนี้ : <?= $result['standard_number'] ?> หรือไม่ ??')"
+                            class="btn btn-sm btn-warning text-white" style="font-size:20px;">พิมพ์รายงาน</a>
                         <a href="?page=delete&standard_idtb=<?= $result['standard_idtb'] ?>"
                             onclick="return confirm('คุณต้องการลบเอกสารนี้ : <?= $result['standard_number'] ?> หรือไม่ ??')"
-                            class="btn btn-sm btn-danger">ลบเอกสาร</a>
-                        <a class="btn btn-sm " style="background-color:#FFD700;"
+                            class="btn btn-sm btn-danger"style="font-size:20px;">ลบเอกสาร</a>
+                        <a class="btn btn-sm text-white" style="background-color:black; font-size:20px;"
                             onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
                     </div>
                     <h2 class="font-mirt">เอกสารทั้งหมด</h2>
@@ -49,8 +52,8 @@ $query3 = sqlsrv_query($conn, $sql3);
             </div>
             <hr>
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">ชื่อมาตรฐาน</div>
                         <div class="card-body">
                             <p class="card-text"><?php echo $result['standard_detail']; ?> </p>
@@ -58,8 +61,8 @@ $query3 = sqlsrv_query($conn, $sql3);
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card  mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card  mb-3" style="max-width: 100%">
                         <div class="card-header text-white bg-primary ">มาตรฐานบังคับ</div>
                         <div class="card-body">
                             <p class="card-text"><?php echo $result['standard_mandatory']; ?> </p>
@@ -67,8 +70,8 @@ $query3 = sqlsrv_query($conn, $sql3);
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">หมายเลข tacking</div>
                         <div class="card-body">
                             <p class="card-text"><?php echo $result['standard_tacking']; ?> </p>
@@ -76,8 +79,8 @@ $query3 = sqlsrv_query($conn, $sql3);
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">หมายเหตุ</div>
                         <div class="card-body">
                             <p class="card-text"><?php echo $result['standard_note']; ?> </p>
@@ -87,8 +90,8 @@ $query3 = sqlsrv_query($conn, $sql3);
 
 
                 <!-- หลายฟอร์ม -->
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">กลุ่มผลิตภัณฑ์</div>
                         <?php
                         $standarsidtb = $_REQUEST['standard_idtb'];
@@ -121,8 +124,8 @@ $query3 = sqlsrv_query($conn, $sql3);
                 </div>
 
                 <!-- หลายฟอร์ม -->
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">หน่วยงานที่สามารถทดสอบได้</div>
                         <?php
                         $standarsidtb = $_REQUEST['standard_idtb'];
@@ -155,8 +158,8 @@ $query3 = sqlsrv_query($conn, $sql3);
 
 
                 <!-- หลายฟอร์ม -->
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">หน่วยงานที่ขอ</div>
                         <?php
                         $standarsidtb = $_REQUEST['standard_idtb'];
@@ -188,8 +191,8 @@ $query3 = sqlsrv_query($conn, $sql3);
                 </div>
 
 
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">หน่วยงานที่ขอ</div>
                         <?php
                         $standarsidtb = $_REQUEST['standard_idtb'];
@@ -223,8 +226,8 @@ $query3 = sqlsrv_query($conn, $sql3);
 
                 <!-- หลายฟอร์ม -->
 
-                <div class="col-sm-3">
-                    <div class="card   mb-3" style="max-width: 18rem;">
+                <div class="col-sm-6">
+                    <div class="card   mb-3" style="max-width:100%">
                         <div class="card-header text-white bg-primary">ไฟล์แนบ</div>
                         <div class="main-form1 mt-3 " id="main5">
                             <div class="row" id="sub_main5">
@@ -232,11 +235,14 @@ $query3 = sqlsrv_query($conn, $sql3);
                                 <div class="col-md-8">
                                     <div class="form-group mb-2 input-group">
                                         <?php 
+                                        $i=1;
                                                         $standarsidtb = $_REQUEST['standard_idtb'];
                                                         $sql5 = "SELECT * FROM dimension_file WHERE standard_idtb  = '$standarsidtb' ";
                                                         $query5 = sqlsrv_query($conn,$sql5);
                                                         while ($result5 = sqlsrv_fetch_array($query5, SQLSRV_FETCH_ASSOC)) { ?>
-                                        <a href='./fileupload/<?=$result5['fileupload'] ;?>'><?php echo $result5['fileupload'] ; ?>
+                                        <a href='./fileupload/<?=$result5['fileupload'] ;?>'>
+                                        <?php echo $i++ . ")" .$result5['fileupload'] ; ?>
+                                        <br>
                                         </a>
                                         <?php } ?>
                                     </div>

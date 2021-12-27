@@ -1,22 +1,30 @@
 <?php 
 date_default_timezone_set("Asia/Bangkok");
-$date_today = (date('d/m/Y H:i:s'));
+$standard_create = (date('d/m/Y H:i:s'));
 ?>
 <?php
 $page = (isset($_GET['page'])) ? $_GET['page'] : '';
+$strKeyword = '';
 if (isset($_POST) && !empty($_POST)) {
-    $standard_idtb = $_POST['standard_idtb'];
-    $standard_number = $_POST['standard_number'];
-    $standard_meet = $_POST['standard_meet'];
-    $standard_detail = $_POST['standard_detail'];
-    $standard_mandatory = $_POST['standard_mandatory'];
-    $standard_tacking = $_POST['standard_tacking'];
-    $standard_note = $_POST['standard_note'];
-    $standard_status = $_POST['standard_status'];
-    $standard_day = $_POST['standard_day'] ;
-
+    $strKeyword = $_POST["txtKeyword"];
+    // $standard_idtb = $_POST['standard_idtb'];
+    // $standard_number = $_POST['standard_number'];
+    // $standard_meet = $_POST['standard_meet'];
+    // $standard_detail = $_POST['standard_detail'];
+    // $standard_mandatory = $_POST['standard_mandatory'];
+    // $standard_tacking = $_POST['standard_tacking'];
+    // $standard_note = $_POST['standard_note'];
+    // $standard_status = $_POST['standard_status'];
+    // $standard_day = $_POST['standard_day'] ;
+    // echo '<pre>';
+    //  print_r ($_POST);
+    // echo '</pre>';
 }
-$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a INNER JOIN select_status b ON a.standard_status = b.id_statuss ");
+$sql = ("SELECT * ,a.standard_idtb,a.standard_status,b.statuss_name AS name_status FROM main_std a 
+INNER JOIN select_status b ON a.standard_status = b.id_statuss
+WHERE standard_detail  LIKE '%$strKeyword%' OR standard_status LIKE '%$strKeyword%'
+OR standard_idtb  LIKE '%$strKeyword%'  OR standard_number  LIKE '%$strKeyword%' 
+OR standard_note LIKE '%$strKeyword%'OR standard_day  LIKE ' %$strKeyword%' OR statuss_name LIKE '%$strKeyword%'");
 $query = sqlsrv_query($conn, $sql);
 
 $sql2 = "SELECT * FROM select_status";
@@ -27,7 +35,7 @@ $query2 = sqlsrv_query($conn , $sql2);
         <h2 class="font-mirt">เอกสารทั้งหมด</h2>
         <h3 class="font-mirt">หน้าเอกสารทั้งหมด</h3>
     </div>
-    </div>
+    <form method="post" action="">
     <div class="tab-content font">
         <div id="home" class="container-fluid tab-pane active m-2">
             <div align="right">
@@ -36,16 +44,20 @@ $query2 = sqlsrv_query($conn , $sql2);
                 </a>
             </div>
             <hr>
-            <form method="post" action="">
+            <div align="right" class="" >
+     <input name="txtKeyword" type="text" id="txtKeyword" style="width:20%;" value="<?php echo $strKeyword;?>">
+     <button class="btn btn-primary" type="submit" value="ค้นหา">ค้นหา
+</div>
                 <table class="table table-hover table-responsive-xl table-striped text-center pt-5"
                     style="background-color: white;" id="tableall">
                     <thead>
                         <tr>
                             <th class="col-1">ลำดับที่</th>
+                            <th class="col-1">วันที่เพิ่มเอกสาร</th>
                             <th class="col-2">วาระจากในที่ประชุมสมอ.</th>
                             <th class="col-1">เลขที่มอก.</th>
                             <th class="col-1">ชื่อมาตรฐาน</th>
-                            <th class="col-2">วันที่แต่งตั้ง</th>
+                            <th class="col-2">วันที่แต่งตั้งสถานะ</th>
                             <!-- <th class="col-1">เลขที่เอกสาร</th> -->
                             <th class="col-2">สถานะ</th>
                             <th class="col-3">เมนูจัดการ</th>
@@ -56,24 +68,25 @@ $query2 = sqlsrv_query($conn , $sql2);
                         <?php while ($data = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) : ?>
                         <tr class="text-center">
                             <td class="align-middle"><?= $i++ ?></td>
-                            <td class="align-middle"><?= $data['standard_meet'] ?></td>
+                            <td class="align-middle"><?= date($data['standard_create'])  ?></td>
+                             <td class="align-middle"><?= $data['standard_meet'] ?></td>
                             <td class="align-middle"><?= $data['standard_number'] ?></td>
                             <td class="align-middle"><?= $data['standard_mandatory'] ?></td>
                             <?php if($data['standard_day'] == '') : ?>
                             <td class="align-middle" >ยังไม่ได้ระบุสถานะ</td>
                             <?php endif ; ?>
                             <?php if($data['standard_day']) : ?>
-                            <td class="align-middle" ><?= $data['standard_day'] ?></td>
+                            <td class="align-middle" ><?= dateThai($data['standard_day']) ;?></td>
                             <?php endif ; ?>
                             <?php if($data['id_statuss'] == 1 ) : ?>
                             <td class="align-middle " style="background-color: #daf7a6"><?= $data['name_status'] ?></td>
                             <?php endif ; ?>
                             <?php if($data['id_statuss'] == 2 ) : ?>
-                            <td class="align-middle  text-white" style="background-color: #5F9EA0">
+                            <td class="align-middle  text-lighred" style="background-color: #5F9EA0">
                                 <?= $data['name_status'] ?></td>
                             <?php endif ; ?>
                             <?php if($data['id_statuss'] == 3 ) : ?>
-                            <td class="align-middle bg-secondary text-white"><?= $data['name_status'] ?></td>
+                            <td class="align-middle bg-danger text-white"><?= $data['name_status'] ?></td>
                             <?php endif ; ?>
                             <?php if($data['id_statuss'] == 4 ) : ?>
                             <td class="align-middle text-white" style="background-color : #FF7F50 ;">

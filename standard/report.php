@@ -8,68 +8,100 @@
                 </div>
             </div>
 
-    <div class="  tab-content font">
-        <div id="home" class="container-fluid tab-pane active m-2">
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <div class="">
-                                <div class="pd-t">
-                                    <label> เลือกรูปแบบรายงานอัตโนมัติ </label>
-
-                                    <select name="type_com" class="form-control">
-                                        <option value="" selected disabled>-กรุณาเลือก-</option>
-                                        <option value="กิจการคนเดียว">รายงานรายศูนย์</option>
-                                        <option value="กิจการห้างหุ้นส่วน">รายงานรายช่วงเวลา </option>
-                                        <option value="บริษัทจำกัด">รายงานรายสถานะ </option>
-                                        <option value="บริษัทมหาชนจำกัด">รายงานตามเลขมอก. </option>
-                                        <option value="บริษัทมหาชนจำกัด">รายงานตามหน่วยงานคู่แข่งที่เลือก หรือจำนวนคู่แข่ง (มาก-น้อย)</option>
-                                    </select>
-                                    <br>
+            <div class="  tab-content font">
+                <div id="home" class="container-fluid tab-pane active m-2">
+                    <div class="container">
+                        <div class="col-md-6">
+                            <div class="card mt-4">
+                                <div class="card-body">
                                     <div class="">
-                                        <button type="submit" class="btn btn-danger bt mg-t-bt">พิมพ์รายงาน</button>
+                                        <div class="pd-t">
+                                            <label> เลือกรูปแบบรายงานอัตโนมัติ </label>
+                                            <select name="page" onChange="goTo(this.options[this.selectedIndex].value)"
+                                            class="form-control" style="width:50%;">
+                                                <option value="" selected disabled>-กรุณาเลือก-</option>
+                                                <option value="#" selected="selected">รายงานรายศูนย์
+                                                <option value="#">รายงานรายช่วงเวลา
+                                                <option value="?page=reportstatus">รายงานรายสถานะ
+                                                <option href="#" value="">รายงานตามเลขมอก.
+                                                <option href="#" value="">รายงานตามหน่วยงานคู่แข่งที่เลือกหรือจำนวนคู่แข่ง (มาก-น้อย)
+                                            </select>
+
+
+                                            <!-- <select name="type_com" class="form-control">
+                                                <option value="" selected disabled>-กรุณาเลือก-</option>
+                                                <option href="#" value="">รายงานรายศูนย์</option>
+                                                <option href="#" value="">รายงานรายช่วงเวลา </option>
+                                                <a href="?page=reportstatus">
+                                                    <option value="">รายงานรายสถานะ </option>
+                                                </a>
+                                                <option href="#" value="">รายงานตามเลขมอก. </option>
+                                                <option href="#" value="">รายงานตามหน่วยงานคู่แข่งที่เลือก
+                                                    หรือจำนวนคู่แข่ง (มาก-น้อย)</option>
+                                            </select> -->
+                                            <br>
+                                            <!-- <div class="">
+                                                <button type="submit"
+                                                    class="btn btn-danger bt mg-t-bt">พิมพ์รายงาน</button>
+                                            </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
 
-                <div>
-                    <div class="col-md-12">
-                        <div class="card mt-4">
-                            <div class="card-body">
-                                <div class="">
-                                    <label> เลือกรูปแบบรายงานแบบกำหนดเอง</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle1" name="vehicle1" value=""><label for="vehicle1"> มาตรฐานเลขที่ *</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle2" name="vehicle2" value=""><label for="vehicle2">ประเภทผลิตภัณฑ์ *</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label for="vehicle3">กลุ่มผลิตภัณฑ์</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label for="vehicle3"> ศูนย์ที่เกี่ยวข้อง</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label for="vehicle3">แสดงวันที่ของสถานะทั้งหมด</label>
-                                    <br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label for="vehicle3">แสดงเอกสารแนบทั้งหมด</label>
-                                    (สร้างเป็น link จากในระบบเพื่อให้กดดูได้)
+                        <!-- <div>
+                            <div class="col-md-12">
+                                <div class="card mt-4">
+                                    <div class="card-body">
+                                        <div class="">
+                                            <label> เลือกรูปแบบรายงานแบบกำหนดเอง</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle1" name="vehicle1" value=""><label
+                                                for="vehicle1"> มาตรฐานเลขที่ *</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle2" name="vehicle2" value=""><label
+                                                for="vehicle2">ประเภทผลิตภัณฑ์ *</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label
+                                                for="vehicle3">กลุ่มผลิตภัณฑ์</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label
+                                                for="vehicle3"> ศูนย์ที่เกี่ยวข้อง</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label
+                                                for="vehicle3">แสดงวันที่ของสถานะทั้งหมด</label>
+                                            <br>
+                                            <input type="checkbox" id="vehicle3" name="vehicle3" value=""><label
+                                                for="vehicle3">แสดงเอกสารแนบทั้งหมด</label>
+                                            (สร้างเป็น link จากในระบบเพื่อให้กดดูได้)
+                                        </div>
+                                        <div class="">
+                                            <button type="submit" class="btn btn-danger bt mg-t-bt">พิมพ์รายงาน</button>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div class="">
-                                    <button type="submit" class="btn btn-danger bt mg-t-bt">พิมพ์รายงาน</button>
-                                </div>
-
                             </div>
-                        </div>
+
+                        </div> -->
+
+
+
                     </div>
-
                 </div>
-
-
-
-            </div>
-        </div>
 
 </section>
+<script>
+function goTo(page) {
+    if (page != "") {
+        if (page == "--") {
+            resetMenu();
+        } else {
+            document.location.href = page;
+        }
+    }
+    return false;
+}
+</script>

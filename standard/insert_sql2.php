@@ -13,6 +13,7 @@ if ($mode == "insert_data") {
     $standard_mandatory = $_REQUEST["standard_mandatory"];
     $standard_tacking = $_REQUEST["standard_tacking"];
     $standard_note = $_REQUEST["standard_note"];
+    $date = date('d/m/Y H:i:s');
     //$file = $_REQUEST["file"];
     $group_id = $_REQUEST["group_id"];
     $agency_id = $_REQUEST["agency_id"];
@@ -31,8 +32,8 @@ if ($mode == "insert_data") {
             echo $alert;
             exit();
         }
-        $sql = "INSERT INTO main_std ( standard_mandatory , standard_meet , standard_tacking , standard_number , standard_detail , standard_note , standard_status  ) 
-      VALUES ('$standard_mandatory','$standard_meet','$standard_tacking','$standard_number','$standard_detail','$standard_note' , '$standard_status')";
+        $sql = "INSERT INTO main_std ( standard_mandatory , standard_meet , standard_tacking , standard_number , standard_detail , standard_note , standard_status ,standard_create ) 
+      VALUES ('$standard_mandatory','$standard_meet','$standard_tacking','$standard_number','$standard_detail','$standard_note' , '$standard_status' , '$date')";
 
         //$conn->query($sql);
         //sqlsrv_close($conn);

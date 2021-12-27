@@ -35,7 +35,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                             <div class="form-group mb-2">
                                                 <label for="">สถานะ</label>
                                                 <select class="form-control" name="standard_status" value="<?php echo $result['standard_status']?>"
-                                                    style="height: unset !important;">
+                                                    style="height: unset !important;" require>
                                                     <option selected>กรุณาเลือกสถานะ</option>
                                                     <?php
                                                     $sqll = "SELECT * FROM select_status";
@@ -58,7 +58,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                         <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">วันที่แต่งตั้ง</label>
-                                                <input  id="mydate" name="standard_day" class=" form-control" value="<?php echo $result['standard_day'] ?>">
+                                                <input  id="mydate" name="standard_day" class=" form-control" value="<?php echo $result['standard_day'] ?>" require>
                                             </div>
                                         </div>
                                     </div>
@@ -154,20 +154,40 @@ $date_today = (date('d/m/Y H:i:s'));
                                     </div>
                                 </div>
                             </div>
-                            <!-- 
-                            <div class="col-md-4">
-                                <div class="card mt-4">
-                                    <div class="card-body">
-                                        <div class="">
-                                            <div class="form-group mb-2">
-                                                <label for="">ไฟล์แนบ</label>
-                                                <input type="file" name="file" class="form-control" value="<?php echo $result["file"] ?>">
+                       
+
+    <!-- หลายฟอร์ม -->
+    <div class="col-md-8">
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <div class="">
+                                        <label for="">ไฟล์แนบ</label>
+                                        <a href="javascript:void(0)" onclick="add_element('main5','sub_main5');"
+                                            class=" float-end btn btn-success">เพิ่ม</a>
+                                        <div class="main-form1 mt-3 " id="main5">
+                                            <input type="file" class="form-control" name="fileupload[]" id="fileupload"
+                                                style="height: unset !important;">
+                                            <div style="display:none;">
+                                                <div class="row" id="sub_main5">
+
+                                                    <div class="">
+                                                        <div class="form-group mb-2 input-group mt-3">
+
+                                                            <input type="file" class="form-control" name="fileupload[]"
+                                                                id="fileupload" style="height: unset !important;">
+                                                            <button type="button" onclick="$(this).parent().remove();"
+                                                                class="remove-btn btn btn-danger ">ลบ</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
+
                                     </div>
                                 </div>
-                            </div> -->
-
+                            </div>
+                        </div>
 
                         </div>
 
