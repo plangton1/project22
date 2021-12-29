@@ -1,28 +1,31 @@
-<?php
-$query = "SELECT DISTINCT  standard_status  FROM main_std ORDER BY standard_status ASC";
+    <?php
+$query = "SELECT DISTINCT  standard_status  ,  a.standard_idtb,b.id_statuss,b.statuss_name AS name_status  FROM main_std a 
+INNER JOIN select_status b ON a.standard_status = b.id_statuss ORDER BY standard_status ASC";
 $statement = sqlsrv_query($conn,$query);
 ?>
-<script
-src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
-    <div class="container">
         <form action="" method="post">
+        <h1 align="center">รายการรายสถานะของเอกสาร</h1>
         <select name="search_status" id="search_status" multiple class="form-control selectpicker">
             <?php while ($row = sqlsrv_fetch_array($statement, SQLSRV_FETCH_ASSOC)) : ?>
-            <option value="<?php echo $row["standard_status"] ; ?>"><?php  echo $row["standard_status"] ; ?></option>
+            <option value="<?php echo $row["standard_status"] ; ?>"><?php  echo $row["name_status"] ; ?></option>
             <?php endwhile ; ?>
         </select>
         <input type="hidden" name="status" id="status" />
         <div style="clear:both"></div>
         <br />
         <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>สถานะ</th>
-                        <th>ชื่อ</th>
-                    </tr>
-                </thead>
+        <table class="table table-hover table-responsive-xl table-striped text-center pt-5"
+                    style="background-color: white;" id="tableall">
+                    <thead>
+                        <tr>
+                            <th class="col-1">ลำดับที่</th>
+                            <th class="col-2">สถานะ</th>
+                            <th class="col-2">วาระจากในที่ประชุมสมอ.</th>
+                            <th class="col-1">เลขที่มอก.</th>
+                            <th class="col-1">ชื่อมาตรฐาน</th>
+                            <th class="col-2">วันที่แต่งตั้งสถานะ</th>
+                        </tr>
+                    </thead>
                 <tbody>
                 </tbody>
             </table>
@@ -31,13 +34,16 @@ src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yEx
         <br />
         <br />
             </form>
+            <center>
+            <a  href="./standard/report_status.php">พิมพ์รายงาน</a>
+            </center>
     </div>
 <script type="text/javascript">
 $(document).ready(function() {
     load_data();
     function load_data(query = '') {
         $.ajax({
-            url: "./standard/fetch.php",
+            url: "./standard/report_fetch_status.php",
             method: "POST",
             data: {
                 query: query
@@ -48,10 +54,11 @@ $(document).ready(function() {
         })
     }
     $('#search_status').change(function() {
-        //$('#status').val($('#search_status').val());
+        $('#status').val($('#search_status').val());
         var query = $('#search_status').val();
         load_data(query);
         // console.log(query);
     });
 });
 </script>
+<?php

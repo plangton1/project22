@@ -21,8 +21,8 @@
                                             class="form-control" style="width:50%;">
                                                 <option value="" selected disabled>-กรุณาเลือก-</option>
                                                 <option value="#" selected="selected">รายงานรายศูนย์
-                                                <option value="#">รายงานรายช่วงเวลา
-                                                <option value="?page=reportstatus">รายงานรายสถานะ
+                                                <option value="./standard/report_date.php">รายงานรายช่วงเวลา
+                                                <option value="./standard/report_status.php">รายงานรายสถานะ
                                                 <option href="#" value="">รายงานตามเลขมอก.
                                                 <option href="#" value="">รายงานตามหน่วยงานคู่แข่งที่เลือกหรือจำนวนคู่แข่ง (มาก-น้อย)
                                             </select>

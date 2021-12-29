@@ -19,19 +19,7 @@ if ($mode == "insert_data") {
     $agency_id = $_REQUEST["agency_id"];
     $type_id = $_REQUEST["type_id"];
     $department_id = $_REQUEST["department_id"];
-    $standard_status = "4";
-    if (!empty($standard_number)) {
-        $sql_check = "SELECT * FROM main_std WHERE standard_number = '$standard_number'";
-        $query_check = sqlsrv_query($conn, $sql_check);
-        $row_check = sqlsrv_num_rows($query_check);
-        if ($row_check > 0) {
-            $alert = '<script type="text/javascript">';
-            $alert .= 'alert("standard_number ซ้ำ กรุณากรอกใหม่อีกครั้ง!!");';
-            $alert .= 'window.location.href = "?page=status&function=insert2";';
-            $alert .= '</script>';
-            echo $alert;
-            exit();
-        }
+    $standard_status = "7";
         $sql = "INSERT INTO main_std ( standard_mandatory , standard_meet , standard_tacking , standard_number , standard_detail , standard_note , standard_status ,standard_create ) 
       VALUES ('$standard_mandatory','$standard_meet','$standard_tacking','$standard_number','$standard_detail','$standard_note' , '$standard_status' , '$date')";
 
@@ -218,4 +206,3 @@ if ($mode == "insert_data") {
         sqlsrv_close($conn);
 
     }
-}

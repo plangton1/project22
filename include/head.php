@@ -31,14 +31,20 @@
   <!-- Template Main CSS File -->
   <link href="./ass/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: BizLand - v3.7.0
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-
   <!-- table -->
   <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<!-- font thai sarabun -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap" rel="stylesheet">
+
+<!-- filter -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+            <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+  <style>
+  font-family: 'Sarabun', sans-serif;
+  </style>
 </head>

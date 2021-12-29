@@ -149,10 +149,6 @@
                             </div>
                         </div>
 
-
-
-
-                        Atapol Jitrukmun
                         <div class="col-md-8">
                             <div class="card mt-4">
                                 <div class="card-body">
@@ -300,7 +296,7 @@
                                                             </select>
                                                             <button type="button" onclick="$(this).parent().remove();"
                                                                 class="remove-btn btn btn-danger ">ลบ</button>
-                                                        </div>
+                                                        </div>  
 
                                                     </div>
 

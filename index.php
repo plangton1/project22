@@ -12,7 +12,7 @@
   <main id="main">
 
 <section id="services " class="services font-mirt">
-      <div class="container" data-aos="fade-up">
+      <div class="container"  >
 <?php
     if (!isset($_GET['page']) && empty($_GET['page'])) {
         include('dashboard/index.php');
@@ -40,8 +40,6 @@
         include('standard/status_delete.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'report') {
         include('standard/report.php');
-    } elseif (isset($_GET['page']) && $_GET['page'] == 'reportstatus') {
-        include('standard/report_print_status.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'statusedit') {
         include('standard/status_edit.php');
     } elseif (isset($_GET['page']) && $_GET['page'] == 'dash') {

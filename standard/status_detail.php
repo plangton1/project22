@@ -47,7 +47,7 @@ $query3 = sqlsrv_query($conn, $sql3);
                     <h4 class="font-mirt">วาระจากในที่ประชุมสมอ : <?php echo $result['standard_meet'] ?></h4>
                 </div>
                 <div class="col-lg-6 col-md-6 align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <h4 class="font-mirt">เลขที่มอก : <?php echo $result['standard_number'] ?></h4>
+                    <h4 clas    s="font-mirt">เลขที่มอก : <?php echo $result['standard_number'] ?></h4>
                 </div>
             </div>
             <hr>
